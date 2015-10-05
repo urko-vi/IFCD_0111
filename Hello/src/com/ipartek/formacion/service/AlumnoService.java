@@ -87,15 +87,12 @@ public class AlumnoService implements IAlumnoService{
 			alumno.setNombre("David");
 			alumno.setApellidos("Aranzadi");
 			alumno.setnHermanos(0);
-			alumno.setfNacimiento(fmt.parse("12/09/1990"));
+		//	alumno.setfNacimiento(fmt.parse("12/09/1990"));
 			//calendar.setTime(fmt.parse("12/09/1990"));
 			
 			alumnos.add(alumno);
 		} catch (AlumnoException e) {
-			//TODO Realizar logs
-			e.printStackTrace();
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 

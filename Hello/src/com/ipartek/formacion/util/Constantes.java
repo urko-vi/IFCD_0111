@@ -10,6 +10,14 @@ public class Constantes {
 	/**
 	 * 
 	 */
+	public static final String ATT_OPERACION_ALUMNOS = "operacion";
+	public static final String ATT_NOMBRE = "nombre";
+	public static final String ATT_APELLIDOS = "apellidos";
+	public static final String ATT_DNI = "dni";
+	public static final String ATT_FNACIMIENTO ="fnacimiento";
+	public static final String ATT_LISTADO_CURSOS = "listado_cursos";
+	public static final String ATT_NHERMANOS = "numero_hermanos";
+	
 	public static final String ATT_LISTADO_ALUMNOS = "alumnos";
 	public static final String ATT_MENSAJE ="mensaje";
 	public static final String ATT_USUARIO ="usuario";

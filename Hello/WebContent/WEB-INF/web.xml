@@ -29,4 +29,14 @@
     <servlet-name>LogoutServlet</servlet-name>
     <url-pattern>/logout.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AlumnoServlet</display-name>
+    <servlet-name>AlumnoServlet</servlet-name>
+    <servlet-class>com.ipartek.formacion.controller.AlumnoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlumnoServlet</servlet-name>
+    <url-pattern>/alumnos.do</url-pattern>
+  </servlet-mapping>
 </web-app>

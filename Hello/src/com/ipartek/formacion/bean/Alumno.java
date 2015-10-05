@@ -124,7 +124,7 @@ public class Alumno extends Persona implements IMatriculable, IInformable,Compar
 		//-1 ---> fNacimiento < ahora 
 		// 0 ---> fNacimiento == ahora
 		// 1 ---> fNacimiento > ahora 
-		if(fNacimiento.compareTo(ahora)<0){
+		if(fNacimiento.compareTo(ahora)<=0){
 			this.fNacimiento = fNacimiento;
 		}else{
 			throw new AlumnoException(AlumnoException.MSG_FECHANACIMIENTO_NO_VALIDA,
