@@ -23,4 +23,6 @@ public class Constantes {
 	
 	public static final String SERVLET_LOGIN ="login.do";
 	public static final String SERVLET_LOGOUT = "logout.do";
+	
+	public static final String RUTA_BACKUP = "backup/";
 }

@@ -7,6 +7,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login</title>
+  <link rel='stylesheet' href='http://codepen.io/assets/libs/fullpage/jquery-ui.css'>
+
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
 </head>
 <body>
 	<%
@@ -15,11 +18,16 @@
 		out.print(mensaje);
 	}
 	%>
-	
+  <div class="login-card">
 	<form action="<%=Constantes.SERVLET_LOGIN %>" method="post">
 		<input placeholder="introduzca su nombre" type="text" name="<%=Constantes.PAR_USUARIO %>">
 		<input placeholder="" type="password" name="<%=Constantes.PAR_PASSWORD %>">
-		<input type="submit" value="Enviar">
+		<input type="submit" class="login login-submit" value="Enviar">
 	</form>
+	<div class="login-help">
+    	<a href="#">Register</a>  <a href="#">Forgot Password</a>
+  	</div>
+  </div>
+    <script src='http://codepen.io/assets/libs/fullpage/jquery_and_jqueryui.js'></script>
 </body>
 </html>
