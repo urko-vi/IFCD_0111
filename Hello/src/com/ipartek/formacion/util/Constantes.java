@@ -21,6 +21,7 @@ public class Constantes {
 	public static final String ATT_LISTADO_ALUMNOS = "alumnos";
 	public static final String ATT_MENSAJE ="mensaje";
 	public static final String ATT_USUARIO ="usuario";
+	public static final String ATT_ALUMNO ="alumno";
 	//PARAMETROS
 	public static final String PAR_USUARIO = "user";
 	public static final String PAR_PASSWORD= "pass";
@@ -31,6 +32,20 @@ public class Constantes {
 	
 	public static final String SERVLET_LOGIN ="login.do";
 	public static final String SERVLET_LOGOUT = "logout.do";
+	public static final String SERVLET_ALUMNOS = "alumnos.do";
 	
 	public static final String RUTA_BACKUP = "backup/";
+	public static final String JSP_BACK_INDEX = RUTA_BACKUP + "index.jsp";
+	public static final String JSP_BACK_ALUMNO_FORM = RUTA_BACKUP
+			+ "persona/form.jsp";
+	public static final String JSP_BACK_INDEX_ALUMNO = RUTA_BACKUP
+			+ "persona/alumnos.jsp";
+	
+	//OPERACIONES 
+	public static final String OP_KEY = "operation";
+	public static final String OP_UPDATE = "0"; // Actualizar Registro
+	public static final String OP_DELETE = "1"; // Eliminar Registro
+	public static final String OP_LIST = "2"; // Listar todos los Regsitros
+	public static final String OP_DETAIL = "3"; // Mostrar Detalle Registro
+	public static final String OP_CREATE = "4"; // Crear o insertar Registro
 }
