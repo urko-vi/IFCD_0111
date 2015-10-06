@@ -43,9 +43,17 @@ public class Constantes {
 	
 	//OPERACIONES 
 	public static final String OP_KEY = "operation";
-	public static final String OP_UPDATE = "0"; // Actualizar Registro
-	public static final String OP_DELETE = "1"; // Eliminar Registro
-	public static final String OP_LIST = "2"; // Listar todos los Regsitros
-	public static final String OP_DETAIL = "3"; // Mostrar Detalle Registro
-	public static final String OP_CREATE = "4"; // Crear o insertar Registro
+	public static final int OP_UPDATE = 0; // Actualizar Registro
+	public static final int OP_DELETE = 1; // Eliminar Registro
+	public static final int OP_LIST = 2; // Listar todos los Regsitros
+	public static final int OP_DETAIL = 3; // Mostrar Detalle Registro
+	public static final int OP_CREATE = 4; // Crear o insertar Registro
+
+
+
+
+
+
+
+
 }

@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ipartek.formacion.bean.Alumno;
+import com.ipartek.formacion.exceptions.AlumnoException;
+import com.ipartek.formacion.service.AlumnoService;
+import com.ipartek.formacion.service.IAlumnoService;
 import com.ipartek.formacion.util.Constantes;
 
 /**
@@ -18,8 +21,10 @@ import com.ipartek.formacion.util.Constantes;
  */
 public class AlumnoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
 	private ServletConfig config = null;
 	RequestDispatcher dispatcher = null;
+	
 	int id = Alumno.CODIGOALUMNO;
 
 	/**
@@ -54,7 +59,6 @@ public class AlumnoServlet extends HttpServlet {
 		}
 
 		super.service(req, resp);
-
 	}
 
 	/**
@@ -63,12 +67,21 @@ public class AlumnoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		//la existencia de la ID de Alumno es lo que diferencia si
+		//es un getAll o un getById
+		if(request.getParameter("id")!=null){
+			id = Integer.parseInt(request.getParameter("id"));
+		}else{
+			id =Alumno.CODIGOALUMNO;
+		}
+		
 		// comprobar si es getAll o getById
 		if (id == Alumno.CODIGOALUMNO) {
 			getAll(request);
 		} else {
 			getById(request);
 		}
+		//redirige
 		dispatcher.forward(request, response);
 	}
 
@@ -78,16 +91,57 @@ public class AlumnoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
+		int op = -1;
+		try{
+			op = Integer.parseInt((String)request.getAttribute(Constantes.OP_KEY));
+		}catch(Exception e){
+			getAll(request);
+			dispatcher.forward(request, response);
+		}
+		IAlumnoService as = new AlumnoService();
+		switch(op){
+		case Constantes.OP_DELETE:
+			as.delete(id);
+			break;
+		case Constantes.OP_UPDATE:{
+			Alumno al = getDatosAlumno(request);
+			as.update(al);
+		}break;
+		case Constantes.OP_CREATE:{
+			Alumno al = getDatosAlumno(request);
+			as.create(al);
+		}break;
+		case Constantes.OP_LIST:
+			as.getAll();
+			break;
+		case Constantes.OP_DETAIL:
+			as.getById(id);
+			break;
+		}
 	}
 
-	private void getById(final HttpServletRequest request) {
-		// Persona p = model.getById(id);
+	private Alumno getDatosAlumno(final HttpServletRequest request){
 		Alumno al = null;
-		//Alumno al = .getById(id);
-		// pasamos los atributos
+		try {
+			al = new Alumno();
+			al.setNombre(request.getParameter(Constantes.ATT_NOMBRE));
+			al.setCodigoAlumno(id);
+		
+		} catch (AlumnoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return al;
+	}
+	private void getById(final HttpServletRequest request) {
+		
+		Alumno al = null;
+		IAlumnoService as = new AlumnoService();
+		al = as.getById(id);
 		request.setAttribute(Constantes.ATT_USUARIO, al);
-		// forward a la vista del formulario
+
 		dispatcher = request
 				.getRequestDispatcher(Constantes.JSP_BACK_ALUMNO_FORM);
 
@@ -96,12 +150,13 @@ public class AlumnoServlet extends HttpServlet {
 	private void getAll(final HttpServletRequest request) {
 
 		List<Alumno> alumnos = null;
-		// pasamos los atributos
+		IAlumnoService as = new AlumnoService();
+		alumnos =  as.getAll();
 		request.setAttribute(Constantes.ATT_LISTADO_ALUMNOS, alumnos);
 		// forward a la vista
 		dispatcher = request
 				.getRequestDispatcher(Constantes.JSP_BACK_INDEX_ALUMNO);
 
-		//log.debug(alumnos.size() + " recuperadas");
+
 	}
 }

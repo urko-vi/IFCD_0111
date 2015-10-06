@@ -2,10 +2,10 @@
 <%@include file="../includes/head.jsp" %>
 <%@include file="../includes/nav.jsp" %>
 <%
-		//recoger attributo de Persona		
+		//recoger attributo de Alumno		
 		Alumno al = (Alumno)request.getAttribute(Constantes.ATT_ALUMNO);
 		//inicializar variables para el formulario		
-		String buttonValue = "Crear";
+		String buttonValue = "Modificar";
 		String op = Constantes.OP_UPDATE;
 		boolean isNew = false;
 		
@@ -14,18 +14,20 @@
 			al = new Alumno();
 			isNew = true;
 			op = Constantes.OP_CREATE;
+			buttonValue = "Crear";
 		//modificar persona	
-		}else{			
-			buttonValue = "Modificar";
 		}
+		/*else{			
+			buttonValue = "Modificar";
+		}*/
 %>    
     
 
-<div class="col-lg-6">
+<div class="col-xs-12 col-lg-6">
 	<form action="<%=request.getContextPath()+"/"+Constantes.SERVLET_ALUMNOS%>" method="post" role="form">
 	
 		<div class="form-group">			
-			<input type="text" name="id" readonly value="<%=al.getCodigoAlumno()%>" class="form-control">
+			<input type="hidden" name="id" readonly value="<%=al.getCodigoAlumno()%>" class="form-control">
 		</div>	
 		
 		<div class="form-group">
@@ -37,7 +39,9 @@
 			<label>Edad</label>
 
 		</div>		
-			
+		<!-- 
+		resto de atributos
+		 -->
 
 			
 		<div class="form-group">		
@@ -50,12 +54,23 @@
 	
 	</form>
 </div>	
-	<% if ( !isNew) { %>	
+
+	<% //en el caso de que exista dar la opción a borrarlo 
+	if ( !isNew) { %>	
 		<form action="<%=request.getContextPath()+"/"+Constantes.SERVLET_ALUMNOS%>" method="post">
 			<input type="hidden"  name="id"  value="<%=al.getCodigoAlumno()%>">
 			<input type="hidden" name="<%=Constantes.OP_KEY%>" value="<%=Constantes.OP_DELETE%>">
 			<input type="submit" value="Eliminar" class="btn btn-outline btn-danger">	
 		</form>
 	<% } %>	
+
+
+
+
+
+
+
+
+
 
 <%@include file="../includes/footer.jsp" %>
