@@ -6,7 +6,7 @@
 		Alumno al = (Alumno)request.getAttribute(Constantes.ATT_ALUMNO);
 		//inicializar variables para el formulario		
 		String buttonValue = "Modificar";
-		String op = Constantes.OP_UPDATE;
+		int op = Constantes.OP_UPDATE;
 		boolean isNew = false;
 		
 		//nueva persona				
