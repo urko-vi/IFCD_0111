@@ -43,18 +43,19 @@ public class AlumnoService implements IAlumnoService {
 
   @Override
   public boolean delete(final int id) {
-    int i = 0, longitud = alumnos.size();
+    int index = 0;
+    int longitud = alumnos.size();
     boolean encontrado = false;
     // || --> OR
     // && --> AND
 
-    while (i < longitud && encontrado == false) {
-      if (alumnos.get(i).getCodigoUsuario() == id) {
-        alumnos.remove(i);
+    while (index < longitud && encontrado == false) {
+      if (alumnos.get(index).getCodigoUsuario() == id) {
+        alumnos.remove(index);
         encontrado = true;
       }
 
-      i++;
+      index++;
     }
     return encontrado;
   }
@@ -137,15 +138,6 @@ public class AlumnoService implements IAlumnoService {
       nalumno++;
     } catch (AlumnoException e) {
       e.printStackTrace();
-    }
-    Alumno al;
-    try {
-      al = new Alumno();
-      if (alumno.equals(al)) {
-
-      }
-    } catch (AlumnoException e1) {
-      e1.printStackTrace();
     }
 
     try {

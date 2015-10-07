@@ -1,6 +1,3 @@
-/**
- *
- */
 package com.ipartek.formacion.bean.excepciones;
 
 /**
@@ -27,23 +24,23 @@ public class AlumnoException extends Exception {
   public static final int COD_NHERMANOS_NO_VALIDO = 20;
 
   /**
-   * {@code int} codigo de error de fecha de nacimiento no valida
+   * {@code int} codigo de error de fecha de nacimiento no valida.
    */
   public static final int COD_FECHANACIMIENTO_NO_VALIDA = 30;
   /**
-   * {@code String} Mensaje de texto para código de alumno
+   * {@code String} Mensaje de texto para código de alumno.
    */
   public static final String MSG_CODIGO_NO_VALIDO = "El código de alumno introducido no es valido";
   /**
-   * {@code String Mensaje de texto para el numero de
-   * hermanos
+   * {@code String} Mensaje de texto para código de alumno.
    */
-  public static final String MSG_NHERMANOS_NO_VALIDO = "El número de hermnos introducido no es valido";
+  public static final String MSG_NHERMANOS_NO_VALIDO = "El número de hermanos"
+      + "introducido no es valido";
   /**
-   * {@code String Mensaje de texto para fecha de
-   * nacimiento no valida.
+   * {@code String} Mensaje de texto para fecha de nacimiento no valida.
    */
-  public static final String MSG_FECHANACIMIENTO_NO_VALIDA = "La fecha de nacimiento introducida no es valida";
+  public static final String MSG_FECHANACIMIENTO_NO_VALIDA = "La fecha de nacimiento"
+      + "introducida no es valida";
 
   public AlumnoException() {
     super();
@@ -65,14 +62,26 @@ public class AlumnoException extends Exception {
 
   }
 
+  /**
+   * 
+   * @param arg0
+   */
   public AlumnoException(final String arg0) {
     super(arg0);
   }
 
+  /**
+   * 
+   * @param arg0
+   */
   public AlumnoException(final Throwable arg0) {
     super(arg0);
   }
 
+  /**
+   * 
+   * @return
+   */
   public int getCodigo() {
     return codigo;
   }

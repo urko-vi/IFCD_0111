@@ -28,11 +28,11 @@ public class Curso {
    */
   private int codigo;
   /**
-   * {@code}String nombre es el nombre del curso
+   * {@code String} nombre es el nombre del curso.
    */
   private String nombre;
   /**
-   * {@code}Map<Integer,Alumno> es listado de alumnos matriculados al curso.
+   * {@code Map<Integer,Alumno>} es listado de alumnos matriculados al curso.
    */
   private Map<Integer, Alumno> listadoAlumnos;
   /**
@@ -45,9 +45,10 @@ public class Curso {
   private double precio;
 
   /**
-   * El constructor en blanco de la clase {@code}Curso
+   * El constructor en blanco de la clase {@code Curso}
    * 
    * @throws CursoException
+   *           en el caso de que el precio sea negativo y el codigo negativo.
    */
   public Curso() throws CursoException {
     super();
@@ -60,6 +61,13 @@ public class Curso {
     return precio;
   }
 
+  /**
+   * 
+   * <code>double</code>@param precio.
+   * 
+   * @throws CursoException
+   *           en el caso de que el precio sea negativo.
+   */
   public void setPrecio(double precio) throws CursoException {
     if (precio >= Curso.PRECIO_CURSO) {
       this.precio = precio;
@@ -80,6 +88,11 @@ public class Curso {
     return codigo;
   }
 
+  /**
+   * 
+   * @param codigo
+   * @throws CursoException
+   */
   public void setCodigo(int codigo) throws CursoException {
     if (codigo > Curso.CODIGO_CURSO) {
       this.codigo = codigo;

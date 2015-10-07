@@ -20,9 +20,13 @@ public class CursoService implements ICursoService {
     init();
   }
 
+  /**
+   * 
+   * @param alumno
+   */
   public void addAlumno(final Alumno alumno) {
-    Curso c = cursos.get(0);
-    Map<Integer, Alumno> listado = c.getListadoAlumnos();
+    Curso curso = cursos.get(0);
+    Map<Integer, Alumno> listado = curso.getListadoAlumnos();
     listado.put(alumno.getCodigoUsuario(), alumno);
 
   }
@@ -41,7 +45,8 @@ public class CursoService implements ICursoService {
 
   @Override
   public int update(final Curso curso) {
-    int posicion = -1, codigo = Curso.CODIGO_CURSO;
+    int posicion = -1;
+    int codigo = Curso.CODIGO_CURSO;
     // TODO controlar en el caso de que la posición devuelta sea -1
     posicion = encontrarCurso(curso.getCodigo());
 
@@ -51,21 +56,28 @@ public class CursoService implements ICursoService {
   }
 
   private int encontrarCurso(final int codigoCurso) {
-    int i = 0, longitud = cursos.size(), posicion = -1;
+    int index = 0;
+    int longitud = cursos.size();
+    int posicion = -1;
     boolean encontrado = false;
     do {
-      if (cursos.get(i).getCodigo() == codigoCurso) {
+      if (cursos.get(index).getCodigo() == codigoCurso) {
         encontrado = true;
-        posicion = i;
+        posicion = index;
       }
-      i++;
-    } while (i < longitud && encontrado == false);
+      index++;
+    } while (index < longitud && encontrado == false);
     return posicion;
   }
 
+  /**
+   * 
+   * @param codigoCurso
+   * @return
+   */
   public Map<Integer, Alumno> readAlumnos(final int codigoCurso) {
-    Curso c = getById(codigoCurso);
-    Map<Integer, Alumno> listado = c.getListadoAlumnos();
+    Curso curso = getById(codigoCurso);
+    Map<Integer, Alumno> listado = curso.getListadoAlumnos();
 
     /*
      * for(Map.Entry<Integer, Alumno> entry: listado.entrySet()){ Integer codigo = entry.getKey();
@@ -78,18 +90,18 @@ public class CursoService implements ICursoService {
     return listado;
   }
 
-  public final void init() {
+  private final void init() {
     CursoService.i = 0;
     // creamos el objeto de listado de cursos
     cursos = new ArrayList<Curso>();
     // creamos un curso
-    Curso c = null;
+    Curso curso = null;
 
     try {
-      c = new Curso();
-      c.setCodigo(CursoService.i);
-      c.setNombre("Java");
-      c.setTipoCurso(TipoCurso.PROGRACION);
+      curso = new Curso();
+      curso.setCodigo(CursoService.i);
+      curso.setNombre("Java");
+      curso.setTipoCurso(TipoCurso.PROGRACION);
       // creamos el listado de alumnos
       HashMap<Integer, Alumno> listadoAlumnos = null;
       // creamos un objeto de tipo servicio
@@ -103,34 +115,37 @@ public class CursoService implements ICursoService {
         listadoAlumnos.put(al.getCodigoUsuario(), al);
       }
 
-      cursos.add(c);
+      cursos.add(curso);
     } catch (CursoException e) {
       e.printStackTrace();
     }
     CursoService.i++;
   }
 
+  /**
+   * 
+   */
   public void incrementarPrecio() {
     for (int i = 0; i < cursos.size(); i++) {
-      Curso c = cursos.get(i);
-      switch (c.getTipoCurso()) {
+      Curso curso = cursos.get(i);
+      switch (curso.getTipoCurso()) {
         case PROGRACION:
           try {
-            c.setPrecio(c.getPrecio() + 50.0);
+            curso.setPrecio(curso.getPrecio() + 50.0);
           } catch (CursoException e) {
             e.printStackTrace();
           }
           break;
         case DESIGN:
           try {
-            c.setPrecio(c.getPrecio() + 70.0);
+            curso.setPrecio(curso.getPrecio() + 70.0);
           } catch (CursoException e) {
             e.printStackTrace();
           }
           break;
         case OFIMATICA:
           try {
-            c.setPrecio(c.getPrecio() + 150.0);
+            curso.setPrecio(curso.getPrecio() + 150.0);
           } catch (CursoException e) {
             e.printStackTrace();
           }

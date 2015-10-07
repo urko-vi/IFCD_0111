@@ -47,14 +47,23 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   /**
    * Es el constructor con paremetros de la clase Alumno.
    *
+   * <p>
    * <code>int</code> @param codigoAlumno es el codigo del alumno.
+   * </p>
+   * <code>String</code> @param nombre es el nombre del alumno.
+   * <p>
+   * <code>String</code> @param apellidos es los apellidos del alumno.
+   * </p>
+   * <p>
+   * <code>Date</code>@param fnacimiento es la fecha de nacimiento del alumnos.
+   * </p>
+   * </p>
+   * <p>
+   * <code>int</code> @param nhermanos son el numero de hermanos del alumno.
+   * </p>
    *
-   * <code>String</code> @param nombre es el nombre del alumno. <code>String</code> @param apellidos
-   * es los apellidos del alumno. <code>Date</code>@param fNacimiento es la fecha de nacimiento del
-   * alumnos. <code>int</code> @param nHermanos son el numero de hermanos del alumno.
-   *
-   * @param dni
-   *          <code>@throws</code> una <code>Exception</code> de tipo <code>AlumnoException</code>
+   * <code>String</code>@param dni <code>@throws</code> una <code>Exception</code> de tipo
+   * <code>AlumnoException</code>
    */
   public Alumno(final int codigoAlumno, final String nombre, final String apellidos,
       final Date fnacimiento, final int nhermanos, final String dni) throws AlumnoException {
@@ -100,9 +109,11 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   }
 
   /**
-   *
-   * @param fnacimiento
-   * @throws AlumnoException
+   * Metodo de poner la fecha de nacimiento del alumno.
+   * 
+   * <code>Date</code>@param fnacimiento
+   * 
+   * @throws <code>AlumnoException</code>
    */
   public void setfnacimiento(final Date fnacimiento) throws AlumnoException {
 
@@ -129,6 +140,11 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
     return nhermanos;
   }
 
+  /**
+   * 
+   * @param nhermanos
+   * @throws AlumnoException
+   */
   public void setnhermanos(final int nhermanos) throws AlumnoException {
     if (nhermanos >= Alumno.NHERMANOS) {
       this.nhermanos = nhermanos;
@@ -144,11 +160,11 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   @Override
   public void matricularCurso(final int codigoCurso) {
     CursoService cs = new CursoService();
-    Curso c = cs.getById(codigoCurso);
-    Map<Integer, Alumno> listadoAlumnos = c.getListadoAlumnos();
+    Curso curso = cs.getById(codigoCurso);
+    Map<Integer, Alumno> listadoAlumnos = curso.getListadoAlumnos();
     listadoAlumnos.put(getCodigoUsuario(), this);
-    c.setListadoAlumnos(listadoAlumnos);
-    cs.update(c);
+    curso.setListadoAlumnos(listadoAlumnos);
+    cs.update(curso);
   }
 
   /**
@@ -157,11 +173,11 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   @Override
   public void desmatricularCurso(final int codigoCurso) {
     CursoService cs = new CursoService();
-    Curso c = cs.getById(codigoCurso);
-    Map<Integer, Alumno> listadoAlumnos = c.getListadoAlumnos();
+    Curso curso = cs.getById(codigoCurso);
+    Map<Integer, Alumno> listadoAlumnos = curso.getListadoAlumnos();
     listadoAlumnos.remove(getCodigoUsuario());
-    c.setListadoAlumnos(listadoAlumnos);
-    cs.update(c);
+    curso.setListadoAlumnos(listadoAlumnos);
+    cs.update(curso);
 
   }
 
@@ -174,6 +190,12 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
     Date fechaMatriculacion;
     Alumno alumno;
 
+    /**
+     * 
+     * @param alumno
+     * @param fechaMatriculacion
+     * @throws CursoException
+     */
     public CursoMatriculado(final Alumno alumno, final Date fechaMatriculacion)
         throws CursoException {
       super();

@@ -12,6 +12,10 @@ public final class ManejadorFichero {
 
   }
 
+  /**
+   * 
+   * @return
+   */
   public List<String> leerFichero() {
     List<String> texto = null;
     FileReader fr = null;
@@ -25,10 +29,10 @@ public final class ManejadorFichero {
     try {
       // caracter a caracter
       fr = new FileReader(archivo);
-      int c;
+      int caracter;
 
-      while ((c = fr.read()) != -1) {
-        palabra += c;
+      while ((caracter = fr.read()) != -1) {
+        palabra += caracter;
       }
     } catch (FileNotFoundException e) {
       e.printStackTrace();
