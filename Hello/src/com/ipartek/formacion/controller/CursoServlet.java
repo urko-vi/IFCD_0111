@@ -108,7 +108,7 @@ public class CursoServlet extends HttpServlet {
       throws ServletException, IOException {
     // controlar update, delete, create
     int operacion = -1;
-    CursoService cs = null;
+    ICursoService cs = null;
     Curso curso = null;
     try {
       operacion = Integer.parseInt(request.getParameter(Constantes.OP_KEY));
@@ -124,7 +124,12 @@ public class CursoServlet extends HttpServlet {
         break;
       case Constantes.OP_DELETE:
         cs = new CursoService();
-        cs.delete(codigoCurso);
+        try {
+          cs.delete(codigoCurso);
+        } catch (CursoServiceException e1) {
+          // TODO Auto-generated catch block
+          e1.printStackTrace();
+        }
         break;
       case Constantes.OP_UPDATE:
         cs = new CursoService();

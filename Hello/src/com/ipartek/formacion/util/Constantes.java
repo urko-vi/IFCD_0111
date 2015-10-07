@@ -27,7 +27,11 @@ public final class Constantes {
   /**
    * Atributo que sirve para especificar una <code>List</code> de <code>Alumno</code>.
    */
-  public static final String ATT_LISTADO_ALUMNOS = "alumnos";
+  public static final String ATT_LISTADO_ALUMNOS = "listado_alumnos";
+  /**
+   * Atributo que sirve para especificar una <code>List</code> de <code>Convocatoria</code>.
+   */
+  public static final String ATT_LISTADO_CONVOCATORIAS = "listado_convocatoria";
   /**
    * Atributo que sirve para especificar un objeto <code>Mensaje</code>.
    */

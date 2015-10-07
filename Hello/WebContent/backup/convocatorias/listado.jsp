@@ -1,4 +1,4 @@
-<%@page import="com.ipartek.formacion.bean.Curso"%>
+<%@page import="com.ipartek.formacion.bean.Convocatoria"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -9,41 +9,39 @@
     		
 	<p><a class="btn btn-primary" href="<%=Constantes.JSP_BACK_CURSO_FORM%>" title="crear nuevo curso">cree un nuevo curso</a></p>
 	<%
-		List<Curso> cursos = (List<Curso>)request.getAttribute(Constantes.ATT_LISTADO_ALUMNOS);
-		if (cursos == null){
+		List<Convocatoria> convocatorias = (List<Convocatoria>)request.getAttribute(Constantes.ATT_LISTADO_CONVOCATORIAS);
+		if (convocatorias == null){
  
 				out.print("<h2>No existe ningun curso, por favor cree alguno</h2>");				
 
 		}else{
 			%>
-			<table id="tabla" cellspacing="0" width="100%">
+			<table id="tabla">
 		        <thead>
 		            <tr>
 		                <th>Nombre</th>
-		                <th>Precio</th>
 		                <th><!-- Operacion para Borrar Eliminar --></th>                
 		            </tr>
 		        </thead>
 		 
 		        <tbody>
 			<% 
-			Curso curso = null;
-			for ( int i=0; i < cursos.size(); i++){
-				curso = cursos.get(i); //detalle persona								
+			Convocatoria convocatoria = null;
+			for ( int i=0; i < convocatorias.size(); i++){
+				convocatoria = convocatorias.get(i); //detalle persona								
 				%>
 					<tr>
 		                <td>
 		                
-		                		<%=curso.getNombre()%>
+		                		<%=convocatoria.getNombre()%>
 
 		                </td>
-		                <td><%=curso.getPrecio()%> </td>
 		                <td>
-		                	<a href="<%=Constantes.SERVLET_CURSOS+"?"+Constantes.PAR_CODIGO+"="+curso.getCodigo()%>">
+		                	<a href="<%=Constantes.SERVLET_CONVOCATORIAS+"?"+Constantes.PAR_CODIGO+"="+convocatoria.getCodigo()%>">
 		                		<button type="button" class="btn btn-primary">Editar</button>
 		                	</a>
 		                	<form action="<%=Constantes.SERVLET_CURSOS%>" method="post">
-		                		<input type="hidden" name="<%=Constantes.PAR_CODIGO %>" value="<%=curso.getCodigo()%>">
+		                		<input type="hidden" name="<%=Constantes.PAR_CODIGO %>" value="<%=convocatoria.getCodigo()%>">
 		                		<input type="hidden" name="<%=Constantes.OP_KEY%>" value="<%=Constantes.OP_DELETE%>">
 		                		<input type="submit" class="btn btn-outline btn-danger btn-xs" value="Eliminar">
 		                	</form>		                	
