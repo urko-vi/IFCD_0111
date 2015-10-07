@@ -1,7 +1,5 @@
 /**
- * 
- */
-/**
+ * Paquete de las clases Service del proyecto.
  * @author Administrador
  *
  */

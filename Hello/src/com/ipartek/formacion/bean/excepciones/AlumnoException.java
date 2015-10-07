@@ -78,6 +78,7 @@ public class AlumnoException extends Exception {
   /**
    *
    * @param arg0
+   *          .
    */
   public AlumnoException(final Throwable arg0) {
     super(arg0);

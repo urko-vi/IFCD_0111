@@ -1,7 +1,5 @@
 /**
- * 
- */
-/**
+ * Paquete de los interfaces de los Service.
  * @author Administrador
  *
  */

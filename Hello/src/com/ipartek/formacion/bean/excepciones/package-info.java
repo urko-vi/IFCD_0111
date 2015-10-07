@@ -1,7 +1,5 @@
 /**
- * 
- */
-/**
+ * paquete de expciones de las clases POJO del proyecto.
  * @author Administrador
  *
  */

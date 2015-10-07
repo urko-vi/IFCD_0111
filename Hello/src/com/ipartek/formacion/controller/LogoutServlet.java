@@ -4,7 +4,6 @@ import com.ipartek.formacion.util.Constantes;
 
 import java.io.IOException;
 
-import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,20 +12,20 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class LogoutServlet
+ * Servlet implementation class LogoutServlet.
  */
 public class LogoutServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
   /**
-   * @see HttpServlet#HttpServlet()
+   * @see HttpServlet#HttpServlet().
    */
   public LogoutServlet() {
     super();
   }
 
   /**
-   * @see Servlet#init(ServletConfig)
+   * @see Servlet#init(ServletConfig).
    */
   @Override
   public void init(final ServletConfig config) throws ServletException {
@@ -34,7 +33,7 @@ public class LogoutServlet extends HttpServlet {
   }
 
   /**
-   * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+   * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response).
    */
   @Override
   protected void doGet(final HttpServletRequest request, final HttpServletResponse response)

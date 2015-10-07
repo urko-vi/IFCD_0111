@@ -142,9 +142,12 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   }
 
   /**
+   * Implenta el setter del atributo <code>int</code> nhermanos.
    *
    * @param nhermanos
+   *          <code>int</code> a setear.
    * @throws AlumnoException
+   *           en el caso de que el numero sea menor que 0.
    */
   public void setnhermanos(final int nhermanos) throws AlumnoException {
     if (nhermanos >= Alumno.NHERMANOS) {
@@ -156,6 +159,10 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   }
 
   /**
+   * Implementa el metodo añade un <code>Curso</code> al <code>Map</code>.
+   *
+   * @param codigoCurso
+   *          <code>int</code> es el codigo del <code>Curso </code>
    * @throws CursoServiceException
    *
    */
@@ -171,7 +178,7 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
 
   /**
    * Este metodo borra a un <code>Alumno</code> del <code>Map</code> de alumnos.
-   * 
+   *
    * @throws CursoServiceException
    */
   @Override

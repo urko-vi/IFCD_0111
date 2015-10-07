@@ -1,7 +1,5 @@
 /**
- * 
- */
-/**
+ * Paquete de las clases Servlet del proyecto.
  * @author Administrador
  *
  */

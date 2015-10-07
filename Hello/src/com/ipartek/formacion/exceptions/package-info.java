@@ -1,7 +1,5 @@
 /**
- * Este paquete contendrá las excepciones de nuestro proyecto
- */
-/**
+ * Este paquete contendrá las excepciones de nuestro proyecto.
  * @author Administrador
  *
  */

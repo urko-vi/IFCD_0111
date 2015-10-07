@@ -1,7 +1,5 @@
 /**
- * 
- */
-/**
+ * Paquete de las interfaces de las clases POJO del proyecto.
  * @author Administrador
  *
  */
