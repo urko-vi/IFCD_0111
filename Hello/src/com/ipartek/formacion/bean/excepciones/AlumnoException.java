@@ -1,17 +1,13 @@
 package com.ipartek.formacion.bean.excepciones;
 
 /**
+ * Una <code>Exception</code> que sirve para tratar los errores de <code>Alumno</code>.
+ *
  * @author Administrador
- */
-/**
- * AlumnoException es una {@code}Exception que se encarga de gesionar los errores de {@code}Alumno
  */
 public class AlumnoException extends Exception {
 
   private transient int codigo;
-  /**
-   *
-   */
   private static final long serialVersionUID = 1L;
 
   /**
@@ -42,10 +38,20 @@ public class AlumnoException extends Exception {
   public static final String MSG_FECHANACIMIENTO_NO_VALIDA = "La fecha de nacimiento"
       + "introducida no es valida";
 
+  /**
+   * Constructor vacio de <code>AlumnoException</code>.
+   */
   public AlumnoException() {
     super();
   }
 
+  /**
+   * Constructor que recoge los parametros codigo de error y texto de mensage.
+   *
+   * <code>String</code> @param mensage.
+   *
+   * <code>int</code>@param codigo.
+   */
   public AlumnoException(final String mensage, final int pcodigo) {
     super(mensage);
     codigo = pcodigo;
@@ -63,15 +69,14 @@ public class AlumnoException extends Exception {
   }
 
   /**
-   * 
-   * @param arg0
+   * Constructor que recoge el parametro <code>String</code> @param arg0.
    */
-  public AlumnoException(final String arg0) {
-    super(arg0);
+  public AlumnoException(final String mensage) {
+    super(mensage);
   }
 
   /**
-   * 
+   *
    * @param arg0
    */
   public AlumnoException(final Throwable arg0) {
@@ -79,8 +84,9 @@ public class AlumnoException extends Exception {
   }
 
   /**
-   * 
-   * @return
+   * Metodo para recoger el código de <code>AlumnoException</code>.
+   *
+   * @return <code>int</code> codigo.
    */
   public int getCodigo() {
     return codigo;

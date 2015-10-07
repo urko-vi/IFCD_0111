@@ -1,28 +1,27 @@
 package com.ipartek.formacion.bean;
 
 /**
- * Clase convocatorias
- * 
+ * Clase convocatorias.
+ *
  * @author Administrador
  *
  */
 public class Convocatoria {
   /**
-   * 
+   * Código invalido de una solicitud.
    */
-  public static final int CODIGO_SOLICITUD = -1;
+  public static final int CODIGO_CONVOCATORIA = -1;
+
   private int codigo;
-
   private String nombre;
-
   private int codigoCurso;
 
   /**
-   * Constructor en blanco de la classe <code>Convocatoria</code>
+   * Constructor en blanco de la classe <code>Convocatoria</code>.
    */
   public Convocatoria() {
     super();
-    setCodigo(Convocatoria.CODIGO_SOLICITUD);
+    setCodigo(Convocatoria.CODIGO_CONVOCATORIA);
     setNombre("");
     setCodigoCurso(Curso.CODIGO_CURSO);
   }
