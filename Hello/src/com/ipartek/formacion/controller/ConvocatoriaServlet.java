@@ -11,49 +11,47 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class ConvocatoriaServlet
+ * 
  */
 public class ConvocatoriaServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public ConvocatoriaServlet() {
-		super();
-	}
+  /**
+   * @see HttpServlet#HttpServlet()
+   */
+  public ConvocatoriaServlet() {
+    super();
+  }
 
-	/**
-	 * @see Servlet#init(ServletConfig)
-	 */
-	@Override
-	public void init(ServletConfig config) throws ServletException {
-	}
+  /**
+   * @see Servlet#init(ServletConfig)
+   */
+  @Override
+  public void init(ServletConfig config) throws ServletException {
+  }
 
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	@Override
-	protected void service(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-	}
+  /**
+   * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+   */
+  @Override
+  protected void service(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, IOException {
+  }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	@Override
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-	}
+  /**
+   * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+   */
+  @Override
+  protected void doGet(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, IOException {
+  }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	@Override
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-	}
+  /**
+   * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+   */
+  @Override
+  protected void doPost(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, IOException {
+  }
 
 }
