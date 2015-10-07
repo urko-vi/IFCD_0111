@@ -1,5 +1,11 @@
 package com.ipartek.formacion.controller;
 
+import com.ipartek.formacion.bean.Alumno;
+import com.ipartek.formacion.bean.excepciones.AlumnoException;
+import com.ipartek.formacion.service.AlumnoService;
+import com.ipartek.formacion.service.interfaces.IAlumnoService;
+import com.ipartek.formacion.util.Constantes;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -9,12 +15,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.ipartek.formacion.bean.Alumno;
-import com.ipartek.formacion.bean.excepciones.AlumnoException;
-import com.ipartek.formacion.service.AlumnoService;
-import com.ipartek.formacion.service.interfaces.IAlumnoService;
-import com.ipartek.formacion.util.Constantes;
 
 /**
  * Servlet implementation class AlumnoServlet.
@@ -105,12 +105,12 @@ public class AlumnoServlet extends HttpServlet {
         Alumno al = getDatosAlumno(request);
         as.update(al);
       }
-        break;
+      break;
       case Constantes.OP_CREATE: {
         Alumno al = getDatosAlumno(request);
         as.create(al);
       }
-        break;
+      break;
       case Constantes.OP_LIST:
         as.getAll();
         break;
@@ -124,17 +124,18 @@ public class AlumnoServlet extends HttpServlet {
   }
 
   private Alumno getDatosAlumno(final HttpServletRequest request) {
-    Alumno al = null;
+    Alumno alum = null;
     try {
-      al = new Alumno();
-      al.setNombre(request.getParameter(Constantes.ATT_NOMBRE));
-      al.setCodigoUsuario(id);
+      alum = new Alumno();
 
+      alum.setCodigoUsuario(id);
+      alum.setNombre(request.getParameter(Constantes.PAR_NOMBRE));
+      alum.setApellidos(request.getParameter(Constantes.PAR_APELLIDOS));
     } catch (AlumnoException e) {
       e.printStackTrace();
     }
 
-    return al;
+    return alum;
   }
 
   private void getById(final HttpServletRequest request) {

@@ -1,7 +1,5 @@
 /**
- * Paquete de utilidades del proyecto
- */
-/**
+ * Paquete de utilidades del proyecto.
  * @author Administrador
  *
  */

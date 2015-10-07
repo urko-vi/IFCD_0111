@@ -1,6 +1,7 @@
 package com.ipartek.formacion.util;
 
 /**
+ * Clase que sirve para almacenar las constantes del proyecto.
  * 
  * @author Administrador Aqui se guardan las constantes a nivel de proyecto
  */
@@ -10,20 +11,9 @@ public final class Constantes {
   }
 
   // ATRIBUTOS
+
   /**
-   * 
-   */
-  public static final String ATT_OPERACION_ALUMNOS = "operacion";
-  /**
-   * 
-   */
-  public static final String ATT_NOMBRE = "nombre";
-  /**
-   * 
-   */
-  public static final String ATT_APELLIDOS = "apellidos";
-  /**
-   * 
+   * Atributo que sirve para especificar el nombre.
    */
   public static final String ATT_DNI = "dni";
   /**
@@ -71,6 +61,14 @@ public final class Constantes {
    * 
    */
   public static final String PAR_CODIGO_CURSO = "id";
+  /**
+   * Parametro que sirve para especificar el nombre.
+   */
+  public static final String PAR_NOMBRE = "nombre";
+  /**
+   * Parametro que sirve para especificar el apellidos.
+   */
+  public static final String PAR_APELLIDOS = "apellidos";
 
   // URLS O DIRECCIONES WEB
   /**
@@ -132,19 +130,19 @@ public final class Constantes {
    */
   public static final int OP_UPDATE = 0; // Actualizar Registro
   /**
-   * 
+   * Operación de eliminar todos los registros.
    */
   public static final int OP_DELETE = 1; // Eliminar Registro
   /**
-   * 
+   * Operación de crear todos los registros.
    */
   public static final int OP_LIST = 2; // Listar todos los Regsitros
   /**
-   * operacion de vista de detalle por id
+   * Operacion de vista de detalle por id.
    */
   public static final int OP_DETAIL = 3; // Mostrar Detalle Registro
   /**
-   * 
+   * Operacion de vista de crear un nuevo registro.
    */
   public static final int OP_CREATE = 4; // Crear o insertar Registro
 

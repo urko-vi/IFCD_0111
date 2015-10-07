@@ -1,5 +1,7 @@
 package com.ipartek.formacion.controller;
 
+import com.ipartek.formacion.util.Constantes;
+
 import java.io.IOException;
 
 import javax.servlet.Servlet;
@@ -9,8 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import com.ipartek.formacion.util.Constantes;
 
 /**
  * Servlet implementation class LogoutServlet

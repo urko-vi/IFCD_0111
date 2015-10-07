@@ -1,9 +1,9 @@
 package com.ipartek.formacion.service;
 
-import java.util.List;
-
 import com.ipartek.formacion.bean.Convocatoria;
 import com.ipartek.formacion.service.interfaces.IConvocatoriaService;
+
+import java.util.List;
 
 public class ConvocatoriaService implements IConvocatoriaService {
 

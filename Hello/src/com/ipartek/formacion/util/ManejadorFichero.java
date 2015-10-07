@@ -13,8 +13,10 @@ public final class ManejadorFichero {
   }
 
   /**
-   * 
-   * @return
+   * Procedimiento para leer un fichero caracter a caracter.
+   * <p>
+   * Devuelve @return <code>List</code> con texto leido.
+   * </p>
    */
   public List<String> leerFichero() {
     List<String> texto = null;

@@ -1,13 +1,13 @@
 package com.ipartek.formacion.bean;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Map;
-
 import com.ipartek.formacion.bean.excepciones.AlumnoException;
 import com.ipartek.formacion.bean.excepciones.CursoException;
 import com.ipartek.formacion.bean.interfaces.IMatriculable;
 import com.ipartek.formacion.service.CursoService;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Map;
 
 /**
  * Clase de alumno que es la que puede asistir a los cursos.
@@ -110,9 +110,9 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
 
   /**
    * Metodo de poner la fecha de nacimiento del alumno.
-   * 
+   *
    * <code>Date</code>@param fnacimiento
-   * 
+   *
    * @throws <code>AlumnoException</code>
    */
   public void setfnacimiento(final Date fnacimiento) throws AlumnoException {
@@ -141,7 +141,7 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   }
 
   /**
-   * 
+   *
    * @param nhermanos
    * @throws AlumnoException
    */
@@ -168,7 +168,7 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   }
 
   /**
-   *
+   * Este metodo borra a un <code>Alumno</code> del <code>Map</code> de alumnos.
    */
   @Override
   public void desmatricularCurso(final int codigoCurso) {
@@ -182,6 +182,8 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   }
 
   /**
+   * Clase <code>CursoMatriculado</code> hereda de
+   * <code>Curso</curso>. Sirve para especificar los datos de la matricula del curso.
    *
    * @author va00
    *
@@ -191,7 +193,7 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
     Alumno alumno;
 
     /**
-     * 
+     *
      * @param alumno
      * @param fechaMatriculacion
      * @throws CursoException
@@ -206,7 +208,8 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   }
 
   /**
-   *
+   * Se implementa el metodo compara de la interfaz <code>Comparable</code> comparando nombres y
+   * apellidos.
    */
   @Override
   public int compareTo(final Alumno alumno) {

@@ -1,25 +1,25 @@
 package com.ipartek.formacion.bean;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.ipartek.formacion.bean.excepciones.CursoException;
 import com.ipartek.formacion.util.TipoCurso;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
- * Es la clase
- * 
+ * Es la clase que agrupa los datos de un <code>Curso</curso>.
+ *
  * @author Administrador
  *
  */
 public class Curso {
 
   /**
-   * {@code}int código de curso minimo
+   * {@code int} código de curso minimo.
    */
   public static final int CODIGO_CURSO = -1;
   /**
-   * {@code}double precio minimo del curso
+   * {@code double} precio minimo del curso.
    */
   public static final double PRECIO_CURSO = 0.0;
 
@@ -46,7 +46,7 @@ public class Curso {
 
   /**
    * El constructor en blanco de la clase {@code Curso}
-   * 
+   *
    * @throws CursoException
    *           en el caso de que el precio sea negativo y el codigo negativo.
    */
@@ -62,9 +62,9 @@ public class Curso {
   }
 
   /**
-   * 
+   *
    * <code>double</code>@param precio.
-   * 
+   *
    * @throws CursoException
    *           en el caso de que el precio sea negativo.
    */
@@ -89,7 +89,7 @@ public class Curso {
   }
 
   /**
-   * 
+   *
    * @param codigo
    * @throws CursoException
    */

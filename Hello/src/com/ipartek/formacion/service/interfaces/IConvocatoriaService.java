@@ -1,18 +1,18 @@
 package com.ipartek.formacion.service.interfaces;
 
-import java.util.List;
-
 import com.ipartek.formacion.bean.Convocatoria;
+
+import java.util.List;
 
 public interface IConvocatoriaService {
   /**
-   * 
+   *
    * @return
    */
   public List<Convocatoria> getAll();
 
   /**
-   * 
+   *
    * @param solicitud
    * @return
    */

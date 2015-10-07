@@ -1,8 +1,8 @@
 package com.ipartek.formacion.service.interfaces;
 
-import java.util.List;
-
 import com.ipartek.formacion.bean.Curso;
+
+import java.util.List;
 
 public interface ICursoService {
   // getAll()

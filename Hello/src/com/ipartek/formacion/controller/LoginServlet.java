@@ -1,5 +1,11 @@
 package com.ipartek.formacion.controller;
 
+import com.ipartek.formacion.bean.Alumno;
+import com.ipartek.formacion.bean.Usuario;
+import com.ipartek.formacion.service.AlumnoService;
+import com.ipartek.formacion.service.interfaces.IAlumnoService;
+import com.ipartek.formacion.util.Constantes;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -11,12 +17,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import com.ipartek.formacion.bean.Alumno;
-import com.ipartek.formacion.bean.Usuario;
-import com.ipartek.formacion.service.AlumnoService;
-import com.ipartek.formacion.service.interfaces.IAlumnoService;
-import com.ipartek.formacion.util.Constantes;
 
 /**
  * Servlet implementation class LoginServlet
