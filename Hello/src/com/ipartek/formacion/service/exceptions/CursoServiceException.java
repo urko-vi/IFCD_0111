@@ -1,11 +1,9 @@
 package com.ipartek.formacion.service.exceptions;
 
 /**
- * <code>Exception</code> que sirve para controlar los errores de la clase <code>CursoService</code>
- * .
+ * <code>Exception</code> para los errores de la clase <code>CursoService</code>.
  *
  * @author Urko
- *
  */
 public class CursoServiceException extends Exception {
 
