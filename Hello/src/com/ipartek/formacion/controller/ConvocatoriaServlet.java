@@ -8,7 +8,6 @@ import com.ipartek.formacion.util.Constantes;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,13 +28,6 @@ public class ConvocatoriaServlet extends HttpServlet {
    */
   public ConvocatoriaServlet() {
     super();
-  }
-
-  /**
-   * @see Servlet#init(ServletConfig).
-   */
-  @Override
-  public void init(ServletConfig config) throws ServletException {
   }
 
   /**

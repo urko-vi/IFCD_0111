@@ -1,5 +1,9 @@
-com.ipartek.formacion
 com.ipartek.formacion.bean
+com.ipartek.formacion.bean.excepciones
+com.ipartek.formacion.bean.interfaces
+com.ipartek.formacion.controller
 com.ipartek.formacion.exceptions
 com.ipartek.formacion.service
+com.ipartek.formacion.service.exceptions
+com.ipartek.formacion.service.interfaces
 com.ipartek.formacion.util

@@ -62,7 +62,7 @@ public class ConvocatoriaService implements IConvocatoriaService {
   /**
    * Obtener los datos de la <code>Convocatoria </code> a traves de su codigo.
    *
-   * @param codigoSolicitud
+   * @param codigoConvocatoria
    *          <code>int</code> codigo de la solicitud.
    * @return <code>Convocatoria</code>.
    */

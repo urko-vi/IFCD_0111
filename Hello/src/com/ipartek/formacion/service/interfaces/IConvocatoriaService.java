@@ -27,7 +27,7 @@ public interface IConvocatoriaService {
   public int create(Convocatoria convocatoria);
 
   /**
-   * Obtiene la convocatoria.
+   * Obtiene la convocatoria
    *
    * @param codigoConcovocatoria
    *          <code>int</code> codigo de la <code>Convocatoria</code>.
@@ -36,7 +36,7 @@ public interface IConvocatoriaService {
   public Convocatoria getById(int codigoConvocatoria);
 
   /**
-   * Actualiza los datos de la <code>Convocatoria</code>.
+   * Actualiza los datos de la <code>Convocatoria</code>
    *
    * @param codigoConvocatoria
    *          <code>int</code> codigo de la <code>Convocatoria</code>.
