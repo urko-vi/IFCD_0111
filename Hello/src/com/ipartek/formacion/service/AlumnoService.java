@@ -12,6 +12,7 @@ import com.ipartek.formacion.service.interfaces.IAlumnoService;
 public class AlumnoService implements IAlumnoService {
 
 	private ArrayList<Alumno> alumnos = null;
+	private int i;
 
 	public AlumnoService() {
 		init();
@@ -23,7 +24,7 @@ public class AlumnoService implements IAlumnoService {
 	}
 
 	@Override
-	public Alumno getById(int codigo) {
+	public Alumno getById(final int codigo) {
 		// alumno que vamos a devolver
 		Alumno alumno = null;
 		// Alumno[] alum = null;
@@ -41,7 +42,7 @@ public class AlumnoService implements IAlumnoService {
 	}
 
 	@Override
-	public boolean delete(int id) {
+	public boolean delete(final int id) {
 		int i = 0, longitud = alumnos.size();
 		boolean encontrado = false;
 		// || --> OR
@@ -59,18 +60,21 @@ public class AlumnoService implements IAlumnoService {
 	}
 
 	@Override
-	public Alumno create(Alumno alumno) {
-		int i = Alumno.CODIGOALUMNO;
+	public int create(final Alumno alumno) {
+		int posicion = Alumno.CODIGOALUMNO;
 
-		alumnos.add(alumno);
-		// se captura el código de la base de datos
-		i = alumno.getCodigoAlumno();
+		if (alumnos.add(alumno)) {
 
-		return alumno;
+			// se captura el código de la base de datos
+			posicion = i;
+			i++;
+		}
+
+		return posicion;
 	}
 
 	@Override
-	public int update(Alumno alumno) {
+	public int update(final Alumno alumno) {
 
 		for (Alumno al : alumnos) {
 			// encontrar por id
@@ -86,15 +90,17 @@ public class AlumnoService implements IAlumnoService {
 	}
 
 	private void init() {
+		i = 0;
 		alumnos = new ArrayList<Alumno>();
 		Alumno alumno = null;
 
 		SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
-		// GregorianCalendar calendar = new GregorianCalendar();
+		// GregorianCalendar calendar = new
+// GregorianCalendar();
 
 		try {
 			alumno = new Alumno();
-			alumno.setCodigoAlumno(0);
+			alumno.setCodigoAlumno(i);
 			alumno.setNombre("David");
 			alumno.setApellidos("Aranzadi");
 			alumno.setnHermanos(0);
@@ -102,6 +108,7 @@ public class AlumnoService implements IAlumnoService {
 			// calendar.setTime(fmt.parse("12/09/1990"));
 
 			alumnos.add(alumno);
+			i++;
 		} catch (AlumnoException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
@@ -110,10 +117,11 @@ public class AlumnoService implements IAlumnoService {
 
 		try {
 			alumno = new Alumno();
-			alumno.setCodigoAlumno(1);
+			alumno.setCodigoAlumno(i);
 			alumno.setNombre("Maria");
 			alumno.setApellidos("Gonzalez");
 			alumnos.add(alumno);
+			i++;
 		} catch (AlumnoException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
@@ -122,12 +130,12 @@ public class AlumnoService implements IAlumnoService {
 
 		try {
 			alumno = new Alumno();
-			alumno.setCodigoAlumno(2);
+			alumno.setCodigoAlumno(i);
 			alumno.setNombre("Alexander");
 			alumno.setApellidos("Revuelta");
 			alumnos.add(alumno);
+			i++;
 		} catch (AlumnoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Alumno al;
@@ -137,30 +145,28 @@ public class AlumnoService implements IAlumnoService {
 
 			}
 		} catch (AlumnoException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
 		try {
 			alumno = new Alumno();
-			alumno.setCodigoAlumno(3);
+			alumno.setCodigoAlumno(i);
 			alumno.setNombre("Alain");
 			alumno.setApellidos("Revuelta");
 			alumnos.add(alumno);
-
+			i++;
 		} catch (AlumnoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		try {
 			alumno = new Alumno();
-			alumno.setCodigoAlumno(4);
+			alumno.setCodigoAlumno(i);
 			alumno.setNombre("Carlos");
 			alumno.setApellidos("Mateo");
 			alumnos.add(alumno);
+			i++;
 		} catch (AlumnoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Collections.sort(alumnos);

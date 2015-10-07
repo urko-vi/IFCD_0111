@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.ipartek.formacion.bean.excepciones;
 
@@ -8,7 +8,7 @@ package com.ipartek.formacion.bean.excepciones;
  *
  */
 /**
- * 
+ *
  * AlumnoException es una {@code}Exception que se encarga de gesionar los
  * errores de {@code}Alumno
  *
@@ -17,7 +17,7 @@ public class AlumnoException extends Exception {
 
 	private transient int codigo;
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -49,36 +49,34 @@ public class AlumnoException extends Exception {
 
 	public AlumnoException() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public AlumnoException(String mensage, int pcodigo) {
+	public AlumnoException(final String mensage, final int pcodigo) {
 		super(mensage);
 		codigo = pcodigo;
 	}
 
-	public AlumnoException(String arg0, Throwable arg1, boolean arg2,
-			boolean arg3) {
+	public AlumnoException(final String arg0, final Throwable arg1,
+			final boolean arg2, final boolean arg3) {
 		super(arg0, arg1, arg2, arg3);
 
 	}
 
-	public AlumnoException(String arg0, Throwable arg1) {
+	public AlumnoException(final String arg0, final Throwable arg1) {
 		super(arg0, arg1);
 
 	}
 
-	public AlumnoException(String arg0) {
+	public AlumnoException(final String arg0) {
 		super(arg0);
 	}
 
-	public AlumnoException(Throwable arg0) {
+	public AlumnoException(final Throwable arg0) {
 		super(arg0);
 	}
 
 	@Override
 	public String getMessage() {
-		// TODO Auto-generated method stub
 		return super.getMessage();
 	}
 

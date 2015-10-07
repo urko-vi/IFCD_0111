@@ -1,8 +1,6 @@
 package com.ipartek.formacion.util;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,6 +14,9 @@ public final class ManejadorFichero {
 
 	public List<String> leerFichero() {
 		List<String> texto = null;
+		FileReader fr = null;
+		// BufferedInputStream in = null;
+		// FileInputStream fin = null;
 		// c:\archivo.txt
 		final String ruta = System.getProperty("user.dir")
 				+ System.getProperty("file.separator") + "file"
@@ -23,10 +24,8 @@ public final class ManejadorFichero {
 		File archivo = new File(ruta);
 		String palabra = "";
 		try {
-			FileInputStream fin = new FileInputStream(archivo);
-			BufferedInputStream in = new BufferedInputStream(fin);
 			// caracter a caracter
-			final FileReader fr = new FileReader(archivo);
+			fr = new FileReader(archivo);
 			int c;
 
 			while ((c = fr.read()) != -1) {
@@ -35,8 +34,15 @@ public final class ManejadorFichero {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			if (fr != null) {
+				try {
+					fr.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 		texto.add(palabra);
 		return texto;

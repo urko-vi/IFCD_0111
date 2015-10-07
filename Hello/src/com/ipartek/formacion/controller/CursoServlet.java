@@ -29,7 +29,6 @@ public class CursoServlet extends HttpServlet {
 	 */
 	public CursoServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -41,8 +40,8 @@ public class CursoServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#service(HttpServletRequest request,
+	 *      HttpServletResponse response)
 	 */
 	@Override
 	protected void service(final HttpServletRequest request,
@@ -58,14 +57,16 @@ public class CursoServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doGet(HttpServletRequest request,
+	 *      HttpServletResponse response)
 	 */
 	@Override
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(final HttpServletRequest request,
+			final HttpServletResponse response) throws ServletException,
+			IOException {
 
-		// controlar cuando es getById(codigoCurso) o getAll()
+		// controlar cuando es getById(codigoCurso) o
+// getAll()
 		if (codigoCurso == Curso.CODIGO_CURSO) {
 			// operacion de listar todos los cursos
 			listarTodosCursos(request);
@@ -77,7 +78,7 @@ public class CursoServlet extends HttpServlet {
 		distpacher.forward(request, response);
 	}
 
-	private void obtenerDatosCurso(HttpServletRequest request) {
+	private void obtenerDatosCurso(final HttpServletRequest request) {
 		Curso curso = null;
 		// obtenener datos de un curso
 		CursoService cs = new CursoService();
@@ -89,7 +90,7 @@ public class CursoServlet extends HttpServlet {
 		request.setAttribute(Constantes.ATT_CURSO, curso);
 	}
 
-	private void listarTodosCursos(HttpServletRequest request) {
+	private void listarTodosCursos(final HttpServletRequest request) {
 		List<Curso> cursos = null;
 		CursoService cs = new CursoService();
 		distpacher = request
@@ -100,8 +101,8 @@ public class CursoServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doPost(HttpServletRequest request,
+	 *      HttpServletResponse response)
 	 */
 	@Override
 	protected void doPost(final HttpServletRequest request,
@@ -119,30 +120,30 @@ public class CursoServlet extends HttpServlet {
 		}
 
 		switch (operacion) {
-			case Constantes.OP_CREATE:
-				cs = new CursoService();
-				curso = obtenerParametrosCurso(request);
-				cs.create(curso);
-				break;
-			case Constantes.OP_DELETE:
-				cs = new CursoService();
-				cs.delete(codigoCurso);
-				break;
-			case Constantes.OP_UPDATE:
-				cs = new CursoService();
-				curso = obtenerParametrosCurso(request);
-				cs.update(curso);
-				break;
-			default:
+		case Constantes.OP_CREATE:
+			cs = new CursoService();
+			curso = obtenerParametrosCurso(request);
+			cs.create(curso);
+			break;
+		case Constantes.OP_DELETE:
+			cs = new CursoService();
+			cs.delete(codigoCurso);
+			break;
+		case Constantes.OP_UPDATE:
+			cs = new CursoService();
+			curso = obtenerParametrosCurso(request);
+			cs.update(curso);
+			break;
+		default:
 
-				break;
+			break;
 		}
 		distpacher = request
 				.getRequestDispatcher(Constantes.JSP_BACK_CURSO_LISTADO);
 		distpacher.forward(request, response);
 	}
 
-	private Curso obtenerParametrosCurso(HttpServletRequest request) {
+	private Curso obtenerParametrosCurso(final HttpServletRequest request) {
 		Curso curso = null;
 
 		try {
@@ -151,7 +152,6 @@ public class CursoServlet extends HttpServlet {
 			curso.setNombre(request.getParameter(""));
 			// recogemos datos del resto de parametros
 		} catch (CursoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

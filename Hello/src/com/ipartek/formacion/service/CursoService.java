@@ -20,7 +20,7 @@ public class CursoService implements ICursoService {
 		init();
 	}
 
-	public void addAlumno(Alumno alumno) {
+	public void addAlumno(final Alumno alumno) {
 		Curso c = cursos.get(0);
 		Map<Integer, Alumno> listado = c.getListadoAlumnos();
 		listado.put(alumno.getCodigoAlumno(), alumno);
@@ -28,7 +28,7 @@ public class CursoService implements ICursoService {
 	}
 
 	@Override
-	public Curso getById(int codigo) {
+	public Curso getById(final int codigo) {
 		Curso curso = null;
 		int posicion = Curso.CODIGO_CURSO;
 
@@ -40,7 +40,7 @@ public class CursoService implements ICursoService {
 	}
 
 	@Override
-	public int update(Curso curso) {
+	public int update(final Curso curso) {
 		int posicion = -1, codigo = Curso.CODIGO_CURSO;
 		// TODO controlar en el caso de que la posición devuelta sea -1
 		posicion = encontrarCurso(curso.getCodigo());
@@ -50,7 +50,7 @@ public class CursoService implements ICursoService {
 		return codigo;
 	}
 
-	private int encontrarCurso(int codigoCurso) {
+	private int encontrarCurso(final int codigoCurso) {
 		int i = 0, longitud = cursos.size(), posicion = -1;
 		boolean encontrado = false;
 		do {
@@ -63,14 +63,14 @@ public class CursoService implements ICursoService {
 		return posicion;
 	}
 
-	public Map<Integer, Alumno> readAlumnos(int codigoCurso) {
+	public Map<Integer, Alumno> readAlumnos(final int codigoCurso) {
 		Curso c = getById(codigoCurso);
 		Map<Integer, Alumno> listado = c.getListadoAlumnos();
 
 		/*
 		 * for(Map.Entry<Integer, Alumno> entry: listado.entrySet()){ Integer
 		 * codigo = entry.getKey(); Alumno alum = entry.getValue(); }
-		 * 
+		 *
 		 * Iterator it = listado.keySet().iterator(); while(it.hasNext()){
 		 * Map.Entry<Integer, Alumno> entry = (Map.Entry<Integer,
 		 * Alumno>)it.next(); Integer codigo = entry.getKey(); Alumno alum =
@@ -115,33 +115,30 @@ public class CursoService implements ICursoService {
 		for (int i = 0; i < cursos.size(); i++) {
 			Curso c = cursos.get(i);
 			switch (c.getTipoCurso()) {
-				case PROGRACION:
-					try {
-						c.setPrecio(c.getPrecio() + 50.0);
-					} catch (CursoException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					break;
-				case DESIGN:
-					try {
-						c.setPrecio(c.getPrecio() + 70.0);
-					} catch (CursoException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					break;
-				case OFIMATICA:
-					try {
-						c.setPrecio(c.getPrecio() + 150.0);
-					} catch (CursoException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					break;
-				default:
+			case PROGRACION:
+				try {
+					c.setPrecio(c.getPrecio() + 50.0);
+				} catch (CursoException e) {
+					e.printStackTrace();
+				}
+				break;
+			case DESIGN:
+				try {
+					c.setPrecio(c.getPrecio() + 70.0);
+				} catch (CursoException e) {
+					e.printStackTrace();
+				}
+				break;
+			case OFIMATICA:
+				try {
+					c.setPrecio(c.getPrecio() + 150.0);
+				} catch (CursoException e) {
+					e.printStackTrace();
+				}
+				break;
+			default:
 
-					break;
+				break;
 			}
 		}
 	}
@@ -153,7 +150,7 @@ public class CursoService implements ICursoService {
 	}
 
 	@Override
-	public boolean delete(int codigoCurso) {
+	public boolean delete(final int codigoCurso) {
 		boolean exito = false;
 		int posicion = encontrarCurso(codigoCurso);
 
@@ -165,7 +162,7 @@ public class CursoService implements ICursoService {
 	}
 
 	@Override
-	public int create(Curso curso) {
+	public int create(final Curso curso) {
 		int posicion = Curso.CODIGO_CURSO;
 		try {
 			curso.setCodigo(CursoService.i);

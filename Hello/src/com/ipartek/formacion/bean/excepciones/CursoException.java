@@ -3,7 +3,7 @@ package com.ipartek.formacion.bean.excepciones;
 public class CursoException extends Exception {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -33,29 +33,26 @@ public class CursoException extends Exception {
 		super();
 	}
 
-	public CursoException(String mensage, int pcodigo) {
+	public CursoException(final String mensage, final int pcodigo) {
 		super(mensage);
 		codigo = pcodigo;
 	}
 
-	public CursoException(String message, Throwable cause,
-			boolean enableSuppression, boolean writableStackTrace) {
+	public CursoException(final String message, final Throwable cause,
+			final boolean enableSuppression, final boolean writableStackTrace) {
 		super(message, cause, enableSuppression, writableStackTrace);
-		// TODO Auto-generated constructor stub
 	}
 
-	public CursoException(String message, Throwable cause) {
+	public CursoException(final String message, final Throwable cause) {
 		super(message, cause);
 	}
 
-	public CursoException(String message) {
+	public CursoException(final String message) {
 		super(message);
-		// TODO Auto-generated constructor stub
 	}
 
-	public CursoException(Throwable cause) {
+	public CursoException(final Throwable cause) {
 		super(cause);
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getCodigo() {

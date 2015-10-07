@@ -23,7 +23,6 @@ import com.ipartek.formacion.util.Constantes;
 public class AlumnoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private ServletConfig config = null;
 	RequestDispatcher dispatcher = null;
 
 	int id = Alumno.CODIGOALUMNO;
@@ -33,16 +32,14 @@ public class AlumnoServlet extends HttpServlet {
 	 */
 	public AlumnoServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
 	 * @see Servlet#init(ServletConfig)
 	 */
 	@Override
-	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
-		this.config = config;
+	public void init(final ServletConfig config) throws ServletException {
+
 		super.init(config);
 	}
 
@@ -64,13 +61,15 @@ public class AlumnoServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doGet(HttpServletRequest request,
+	 *      HttpServletResponse response)
 	 */
 	@Override
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		// la existencia de la ID de Alumno es lo que diferencia si
+	protected void doGet(final HttpServletRequest request,
+			final HttpServletResponse response) throws ServletException,
+			IOException {
+		// la existencia de la ID de Alumno es lo que
+// diferencia si
 		// es un getAll o un getById
 		if (request.getParameter("id") != null) {
 			id = Integer.parseInt(request.getParameter("id"));
@@ -89,12 +88,13 @@ public class AlumnoServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doPost(HttpServletRequest request,
+	 *      HttpServletResponse response)
 	 */
 	@Override
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(final HttpServletRequest request,
+			final HttpServletResponse response) throws ServletException,
+			IOException {
 		int op = -1;
 		try {
 			op = Integer.parseInt((String) request
@@ -105,27 +105,27 @@ public class AlumnoServlet extends HttpServlet {
 		}
 		IAlumnoService as = new AlumnoService();
 		switch (op) {
-			case Constantes.OP_DELETE:
-				as.delete(id);
-				break;
-			case Constantes.OP_UPDATE: {
-				Alumno al = getDatosAlumno(request);
-				as.update(al);
-			}
-				break;
-			case Constantes.OP_CREATE: {
-				Alumno al = getDatosAlumno(request);
-				as.create(al);
-			}
-				break;
-			case Constantes.OP_LIST:
-				as.getAll();
-				break;
-			case Constantes.OP_DETAIL:
-				as.getById(id);
-				break;
-			default:
-				break;
+		case Constantes.OP_DELETE:
+			as.delete(id);
+			break;
+		case Constantes.OP_UPDATE: {
+			Alumno al = getDatosAlumno(request);
+			as.update(al);
+		}
+		break;
+		case Constantes.OP_CREATE: {
+			Alumno al = getDatosAlumno(request);
+			as.create(al);
+		}
+		break;
+		case Constantes.OP_LIST:
+			as.getAll();
+			break;
+		case Constantes.OP_DETAIL:
+			as.getById(id);
+			break;
+		default:
+			break;
 		}
 
 	}
@@ -138,7 +138,6 @@ public class AlumnoServlet extends HttpServlet {
 			al.setCodigoAlumno(id);
 
 		} catch (AlumnoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
