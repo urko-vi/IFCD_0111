@@ -12,7 +12,7 @@ import com.ipartek.formacion.service.interfaces.IAlumnoService;
 public class AlumnoService implements IAlumnoService {
 
   private ArrayList<Alumno> alumnos = null;
-  private int i;
+  private int nalumno;
 
   public AlumnoService() {
     init();
@@ -66,8 +66,8 @@ public class AlumnoService implements IAlumnoService {
     if (alumnos.add(alumno)) {
 
       // se captura el código de la base de datos
-      posicion = i;
-      i++;
+      posicion = nalumno;
+      nalumno++;
     }
 
     return posicion;
@@ -90,7 +90,7 @@ public class AlumnoService implements IAlumnoService {
   }
 
   private void init() {
-    i = 0;
+    nalumno = 0;
     alumnos = new ArrayList<Alumno>();
     Alumno alumno = null;
 
@@ -100,7 +100,7 @@ public class AlumnoService implements IAlumnoService {
 
     try {
       alumno = new Alumno();
-      alumno.setCodigoAlumno(i);
+      alumno.setCodigoAlumno(nalumno);
       alumno.setNombre("David");
       alumno.setApellidos("Aranzadi");
       alumno.setnhermanos(0);
@@ -108,7 +108,7 @@ public class AlumnoService implements IAlumnoService {
       // calendar.setTime(fmt.parse("12/09/1990"));
 
       alumnos.add(alumno);
-      i++;
+      nalumno++;
     } catch (AlumnoException e) {
       e.printStackTrace();
     } catch (ParseException e) {
@@ -117,11 +117,11 @@ public class AlumnoService implements IAlumnoService {
 
     try {
       alumno = new Alumno();
-      alumno.setCodigoAlumno(i);
+      alumno.setCodigoAlumno(nalumno);
       alumno.setNombre("Maria");
       alumno.setApellidos("Gonzalez");
       alumnos.add(alumno);
-      i++;
+      nalumno++;
     } catch (AlumnoException e) {
       e.printStackTrace();
     } catch (Exception e) {
@@ -130,11 +130,11 @@ public class AlumnoService implements IAlumnoService {
 
     try {
       alumno = new Alumno();
-      alumno.setCodigoAlumno(i);
+      alumno.setCodigoAlumno(nalumno);
       alumno.setNombre("Alexander");
       alumno.setApellidos("Revuelta");
       alumnos.add(alumno);
-      i++;
+      nalumno++;
     } catch (AlumnoException e) {
       e.printStackTrace();
     }
@@ -150,22 +150,22 @@ public class AlumnoService implements IAlumnoService {
 
     try {
       alumno = new Alumno();
-      alumno.setCodigoAlumno(i);
+      alumno.setCodigoAlumno(nalumno);
       alumno.setNombre("Alain");
       alumno.setApellidos("Revuelta");
       alumnos.add(alumno);
-      i++;
+      nalumno++;
     } catch (AlumnoException e) {
       e.printStackTrace();
     }
 
     try {
       alumno = new Alumno();
-      alumno.setCodigoAlumno(i);
+      alumno.setCodigoAlumno(nalumno);
       alumno.setNombre("Carlos");
       alumno.setApellidos("Mateo");
       alumnos.add(alumno);
-      i++;
+      nalumno++;
     } catch (AlumnoException e) {
       e.printStackTrace();
     }
