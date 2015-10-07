@@ -13,35 +13,31 @@ public final class Constantes {
   // ATRIBUTOS
 
   /**
-   * Atributo que sirve para especificar el nombre.
+   * Atributo que sirve para especificar el dni.
    */
   public static final String ATT_DNI = "dni";
   /**
-   *
+   * Atributo que sirve para especificar la fecha de nacimiento.
    */
   public static final String ATT_FNACIMIENTO = "fnacimiento";
   /**
-   *
+   * Atributo que sirve para especificar una <code>List</code> de <code>Curso</code>.
    */
   public static final String ATT_LISTADO_CURSOS = "listado_cursos";
   /**
-   *
-   */
-  public static final String ATT_NHERMANOS = "numero_hermanos";
-  /**
-   *
+   * Atributo que sirve para especificar una <code>List</code> de <code>Alumno</code>.
    */
   public static final String ATT_LISTADO_ALUMNOS = "alumnos";
   /**
-   *
+   * Atributo que sirve para especificar un objeto <code>Mensaje</code>.
    */
   public static final String ATT_MENSAJE = "mensaje";
   /**
-   *
+   * Atributo que sirve para especificar un objeto <code>Usuario</code>.
    */
   public static final String ATT_USUARIO = "usuario";
   /**
-   *
+   * Atributo que sirve para especificar un objeto <code>Alumno</code>.
    */
   public static final String ATT_ALUMNO = "alumno";
   /**
@@ -69,7 +65,10 @@ public final class Constantes {
    * Parametro que sirve para especificar el apellidos.
    */
   public static final String PAR_APELLIDOS = "apellidos";
-
+  /**
+   * Parametro que sirve para especificar el numero de hermanos.
+   */
+  public static final String PAR_NHERMANOS = "numero_hermanos";
   // URLS O DIRECCIONES WEB
   /**
    * Dirección de la página de login.
