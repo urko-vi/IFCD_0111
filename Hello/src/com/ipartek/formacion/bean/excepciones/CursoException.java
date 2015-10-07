@@ -1,4 +1,4 @@
-package com.ipartek.formacion.exceptions;
+package com.ipartek.formacion.bean.excepciones;
 
 public class CursoException extends Exception {
 

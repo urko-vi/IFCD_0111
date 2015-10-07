@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ipartek.formacion.bean.Curso;
-import com.ipartek.formacion.exceptions.CursoException;
+import com.ipartek.formacion.bean.excepciones.CursoException;
 import com.ipartek.formacion.service.CursoService;
 import com.ipartek.formacion.util.Constantes;
 
@@ -147,6 +147,7 @@ public class CursoServlet extends HttpServlet {
 
 		try {
 			curso = new Curso();
+			curso.setCodigo(codigoCurso);
 			curso.setNombre(request.getParameter(""));
 			// recogemos datos del resto de parametros
 		} catch (CursoException e) {
@@ -156,5 +157,4 @@ public class CursoServlet extends HttpServlet {
 
 		return curso;
 	}
-
 }

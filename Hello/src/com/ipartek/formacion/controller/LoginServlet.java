@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import com.ipartek.formacion.bean.Alumno;
 import com.ipartek.formacion.bean.Usuario;
 import com.ipartek.formacion.service.AlumnoService;
-import com.ipartek.formacion.service.IAlumnoService;
+import com.ipartek.formacion.service.interfaces.IAlumnoService;
 import com.ipartek.formacion.util.Constantes;
 
 /**

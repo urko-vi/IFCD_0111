@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ipartek.formacion.exceptions;
+package com.ipartek.formacion.bean.excepciones;
 
 /**
  * @author Administrador

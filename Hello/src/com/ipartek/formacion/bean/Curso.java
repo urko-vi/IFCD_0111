@@ -4,7 +4,7 @@ package com.ipartek.formacion.bean;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.ipartek.formacion.exceptions.CursoException;
+import com.ipartek.formacion.bean.excepciones.CursoException;
 import com.ipartek.formacion.util.TipoCurso;
 /**
  * Es la clase

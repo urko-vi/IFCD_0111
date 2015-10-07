@@ -8,8 +8,10 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
 
-import com.ipartek.formacion.exceptions.AlumnoException;
-import com.ipartek.formacion.exceptions.CursoException;
+import com.ipartek.formacion.bean.excepciones.AlumnoException;
+import com.ipartek.formacion.bean.excepciones.CursoException;
+import com.ipartek.formacion.bean.interfaces.IInformable;
+import com.ipartek.formacion.bean.interfaces.IMatriculable;
 import com.ipartek.formacion.service.CursoService;
 /**
  * 

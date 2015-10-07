@@ -26,6 +26,11 @@
 			<label for="">Nombre</label>	
 			<input id="" type="text"    name="name" value="<%=curso.getNombre()%>" class="form-control">
 		</div>	
+		
+		<div class="form-group">
+			<label for="">Precio</label>	
+			<input id="" type="text"    name="name" value="<%=curso.getNombre()%>" class="form-control">
+		</div>
 		<!-- 
 		resto de atributos
 		 

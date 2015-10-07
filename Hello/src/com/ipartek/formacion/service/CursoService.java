@@ -7,7 +7,8 @@ import java.util.Map;
 
 import com.ipartek.formacion.bean.Alumno;
 import com.ipartek.formacion.bean.Curso;
-import com.ipartek.formacion.exceptions.CursoException;
+import com.ipartek.formacion.bean.excepciones.CursoException;
+import com.ipartek.formacion.service.interfaces.ICursoService;
 import com.ipartek.formacion.util.TipoCurso;
 
 public class CursoService implements ICursoService {

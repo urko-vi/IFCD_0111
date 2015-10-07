@@ -1,11 +1,11 @@
 package com.ipartek.formacion.util;
 
 public enum TipoCurso {
-	PROGRACION("Cursos de progracion"),OFIMATICA("Cursos de ofimatica"),DESIGN("Cursos de diseño grafico");
-	
+	PROGRACION("Cursos de progracion"), OFIMATICA("Cursos de ofimatica"), DESIGN(
+			"Cursos de diseño grafico");
 	private String descripcion;
-	
-	TipoCurso(String descripcion){
+
+	TipoCurso(String descripcion) {
 		this.descripcion = descripcion;
 	}
 
@@ -16,5 +16,5 @@ public enum TipoCurso {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	
+
 }
