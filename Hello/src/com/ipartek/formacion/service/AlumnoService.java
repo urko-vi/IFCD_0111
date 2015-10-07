@@ -33,7 +33,7 @@ public class AlumnoService implements IAlumnoService {
       // alumno con codigo a comparar
       Alumno al = alumnos.get(i);
 
-      if (al.getCodigoAlumno() == codigo) {
+      if (al.getCodigoUsuario() == codigo) {
         alumno = al;
       }
     }
@@ -49,7 +49,7 @@ public class AlumnoService implements IAlumnoService {
     // && --> AND
 
     while (i < longitud && encontrado == false) {
-      if (alumnos.get(i).getCodigoAlumno() == id) {
+      if (alumnos.get(i).getCodigoUsuario() == id) {
         alumnos.remove(i);
         encontrado = true;
       }
@@ -78,7 +78,7 @@ public class AlumnoService implements IAlumnoService {
 
     for (Alumno al : alumnos) {
       // encontrar por id
-      if (al.getCodigoAlumno() == alumno.getCodigoAlumno()) {
+      if (al.getCodigoUsuario() == alumno.getCodigoUsuario()) {
         // capturar la posicon
         int index = alumnos.indexOf(al);
         // lo vamos machacar
@@ -86,7 +86,7 @@ public class AlumnoService implements IAlumnoService {
         alumnos.add(index, alumno);
       }
     }
-    return alumno.getCodigoAlumno();
+    return alumno.getCodigoUsuario();
   }
 
   private void init() {
@@ -100,7 +100,7 @@ public class AlumnoService implements IAlumnoService {
 
     try {
       alumno = new Alumno();
-      alumno.setCodigoAlumno(nalumno);
+      alumno.setCodigoUsuario(nalumno);
       alumno.setNombre("David");
       alumno.setApellidos("Aranzadi");
       alumno.setnhermanos(0);
@@ -117,7 +117,7 @@ public class AlumnoService implements IAlumnoService {
 
     try {
       alumno = new Alumno();
-      alumno.setCodigoAlumno(nalumno);
+      alumno.setCodigoUsuario(nalumno);
       alumno.setNombre("Maria");
       alumno.setApellidos("Gonzalez");
       alumnos.add(alumno);
@@ -130,7 +130,7 @@ public class AlumnoService implements IAlumnoService {
 
     try {
       alumno = new Alumno();
-      alumno.setCodigoAlumno(nalumno);
+      alumno.setCodigoUsuario(nalumno);
       alumno.setNombre("Alexander");
       alumno.setApellidos("Revuelta");
       alumnos.add(alumno);
@@ -150,7 +150,7 @@ public class AlumnoService implements IAlumnoService {
 
     try {
       alumno = new Alumno();
-      alumno.setCodigoAlumno(nalumno);
+      alumno.setCodigoUsuario(nalumno);
       alumno.setNombre("Alain");
       alumno.setApellidos("Revuelta");
       alumnos.add(alumno);
@@ -161,7 +161,7 @@ public class AlumnoService implements IAlumnoService {
 
     try {
       alumno = new Alumno();
-      alumno.setCodigoAlumno(nalumno);
+      alumno.setCodigoUsuario(nalumno);
       alumno.setNombre("Carlos");
       alumno.setApellidos("Mateo");
       alumnos.add(alumno);

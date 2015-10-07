@@ -12,7 +12,7 @@ import com.ipartek.formacion.service.CursoService;
 /**
  * @author Administrador
  */
-public class Alumno extends Persona implements IMatriculable, Comparable<Alumno> {
+public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno> {
   /**
    *
    */
@@ -22,7 +22,6 @@ public class Alumno extends Persona implements IMatriculable, Comparable<Alumno>
    */
   public static final int NHERMANOS = 0;
 
-  private int codigoAlumno;
   private String dni;
   private String nombre;
   private String apellidos;
@@ -30,7 +29,7 @@ public class Alumno extends Persona implements IMatriculable, Comparable<Alumno>
   private int nhermanos;
 
   public Alumno() throws AlumnoException {
-    setCodigoAlumno(0);
+    setCodigoUsuario(Alumno.CODIGOALUMNO);
     setNombre("");
     setApellidos("");
     setfnacimiento(Calendar.getInstance().getTime());
@@ -53,7 +52,7 @@ public class Alumno extends Persona implements IMatriculable, Comparable<Alumno>
   public Alumno(final int codigoAlumno, final String nombre, final String apellidos,
       final Date fnacimiento, final int nhermanos, final String dni) throws AlumnoException {
     super();
-    setCodigoAlumno(codigoAlumno);
+    setCodigoUsuario(codigoAlumno);
     setNombre(nombre);
     setApellidos(apellidos);
     setfnacimiento(fnacimiento);
@@ -67,24 +66,6 @@ public class Alumno extends Persona implements IMatriculable, Comparable<Alumno>
 
   public void setDni(final String dni) {
     this.dni = dni;
-  }
-
-  public int getCodigoAlumno() {
-    return codigoAlumno;
-  }
-
-  /**
-   * 
-   * @param codigoAlumno
-   * @throws AlumnoException
-   */
-  public void setCodigoAlumno(final int codigoAlumno) throws AlumnoException {
-    if (codigoAlumno > Alumno.CODIGOALUMNO) {
-      this.codigoAlumno = codigoAlumno;
-    } else {
-      throw new AlumnoException(AlumnoException.MSG_CODIGO_NO_VALIDO,
-          AlumnoException.COD_CODIGO_NO_VALIDO);
-    }
   }
 
   /**
@@ -150,7 +131,7 @@ public class Alumno extends Persona implements IMatriculable, Comparable<Alumno>
     CursoService cs = new CursoService();
     Curso c = cs.getById(codigoCurso);
     Map<Integer, Alumno> listadoAlumnos = c.getListadoAlumnos();
-    listadoAlumnos.put(codigoAlumno, this);
+    listadoAlumnos.put(getCodigoUsuario(), this);
     c.setListadoAlumnos(listadoAlumnos);
     cs.update(c);
   }
@@ -160,7 +141,7 @@ public class Alumno extends Persona implements IMatriculable, Comparable<Alumno>
     CursoService cs = new CursoService();
     Curso c = cs.getById(codigoCurso);
     Map<Integer, Alumno> listadoAlumnos = c.getListadoAlumnos();
-    listadoAlumnos.remove(codigoAlumno);
+    listadoAlumnos.remove(getCodigoUsuario());
     c.setListadoAlumnos(listadoAlumnos);
     cs.update(c);
 
@@ -206,7 +187,7 @@ public class Alumno extends Persona implements IMatriculable, Comparable<Alumno>
     boolean igual = false;
     if (obj instanceof Alumno) {
       al = (Alumno) obj;
-      if (al.getCodigoAlumno() == codigoAlumno) {
+      if (al.getCodigoUsuario() == getCodigoUsuario()) {
         igual = true;
       }
 
