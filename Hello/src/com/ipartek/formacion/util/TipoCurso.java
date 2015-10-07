@@ -1,6 +1,9 @@
 package com.ipartek.formacion.util;
 
 public enum TipoCurso {
+	/**
+	 * Tipos de Curso
+	 */
 	PROGRACION("Cursos de progracion"), OFIMATICA("Cursos de ofimatica"), DESIGN(
 			"Cursos de diseño grafico");
 	private String descripcion;

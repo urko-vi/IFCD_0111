@@ -14,6 +14,7 @@ import com.ipartek.formacion.util.TipoCurso;
 public class CursoService implements ICursoService {
 
 	private List<Curso> cursos = null;
+	private static int i;
 
 	public CursoService() {
 		init();
@@ -45,7 +46,7 @@ public class CursoService implements ICursoService {
 		posicion = encontrarCurso(curso.getCodigo());
 
 		cursos.add(posicion, curso);
-
+		codigo = curso.getCodigo();
 		return codigo;
 	}
 
@@ -78,7 +79,8 @@ public class CursoService implements ICursoService {
 		return listado;
 	}
 
-	public void init() {
+	public final void init() {
+		CursoService.i = 0;
 		// creamos el objeto de listado de cursos
 		cursos = new ArrayList<Curso>();
 		// creamos un curso
@@ -86,7 +88,7 @@ public class CursoService implements ICursoService {
 
 		try {
 			c = new Curso();
-			c.setCodigo(0);
+			c.setCodigo(CursoService.i);
 			c.setNombre("Java");
 			c.setTipoCurso(TipoCurso.PROGRACION);
 			// creamos el listado de alumnos
@@ -104,10 +106,9 @@ public class CursoService implements ICursoService {
 
 			cursos.add(c);
 		} catch (CursoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		CursoService.i++;
 	}
 
 	public void incrementarPrecio() {
@@ -166,10 +167,13 @@ public class CursoService implements ICursoService {
 	@Override
 	public int create(Curso curso) {
 		int posicion = Curso.CODIGO_CURSO;
-		cursos.add(curso);
-
-		posicion = encontrarCurso(curso.getCodigo());
-
+		try {
+			curso.setCodigo(CursoService.i);
+			cursos.add(curso);
+			CursoService.i++;
+		} catch (CursoException e) {
+			e.printStackTrace();
+		}
 		return posicion;
 	}
 }

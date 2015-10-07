@@ -1,5 +1,11 @@
 package com.ipartek.formacion.bean;
 
+/**
+ * Clase convocatorias
+ * 
+ * @author Administrador
+ *
+ */
 public class Convocatoria {
 	public static final int CODIGO_SOLICITUD = -1;
 	private int codigo;
@@ -8,6 +14,9 @@ public class Convocatoria {
 
 	private int codigoCurso;
 
+	/**
+	 * Constructor en blanco de la classe <code>Convocatoria</code>
+	 */
 	public Convocatoria() {
 		super();
 		setCodigo(Convocatoria.CODIGO_SOLICITUD);

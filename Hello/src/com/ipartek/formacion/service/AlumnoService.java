@@ -115,10 +115,9 @@ public class AlumnoService implements IAlumnoService {
 			alumno.setApellidos("Gonzalez");
 			alumnos.add(alumno);
 		} catch (AlumnoException e) {
-			// TODO Auto-generated catch block
-			e.getMessage();
+			e.printStackTrace();
 		} catch (Exception e) {
-			e.getMessage();
+			e.printStackTrace();
 		}
 
 		try {

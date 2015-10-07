@@ -6,18 +6,18 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
-public class ManejadorFichero {
+public final class ManejadorFichero {
 
 	private ManejadorFichero() {
 
 	}
 
-	public ArrayList<String> leerFichero() {
-		ArrayList<String> texto = null;
+	public List<String> leerFichero() {
+		List<String> texto = null;
 		// c:\archivo.txt
-		String ruta = System.getProperty("user.dir")
+		final String ruta = System.getProperty("user.dir")
 				+ System.getProperty("file.separator") + "file"
 				+ System.getProperty("file.separator") + "archivo.txt";
 		File archivo = new File(ruta);
@@ -26,7 +26,7 @@ public class ManejadorFichero {
 			FileInputStream fin = new FileInputStream(archivo);
 			BufferedInputStream in = new BufferedInputStream(fin);
 			// caracter a caracter
-			FileReader fr = new FileReader(archivo);
+			final FileReader fr = new FileReader(archivo);
 			int c;
 
 			while ((c = fr.read()) != -1) {
