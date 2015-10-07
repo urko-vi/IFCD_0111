@@ -11,164 +11,164 @@ import com.ipartek.formacion.service.interfaces.IAlumnoService;
 
 public class AlumnoService implements IAlumnoService {
 
-	private ArrayList<Alumno> alumnos = null;
-	private int i;
+  private ArrayList<Alumno> alumnos = null;
+  private int i;
 
-	public AlumnoService() {
-		init();
-	}
+  public AlumnoService() {
+    init();
+  }
 
-	@Override
-	public ArrayList<Alumno> getAll() {
-		return alumnos;
-	}
+  @Override
+  public ArrayList<Alumno> getAll() {
+    return alumnos;
+  }
 
-	@Override
-	public Alumno getById(final int codigo) {
-		// alumno que vamos a devolver
-		Alumno alumno = null;
-		// Alumno[] alum = null;
+  @Override
+  public Alumno getById(final int codigo) {
+    // alumno que vamos a devolver
+    Alumno alumno = null;
+    // Alumno[] alum = null;
 
-		for (int i = 0; i < alumnos.size(); i++) {
-			// alumno con codigo a comparar
-			Alumno al = alumnos.get(i);
+    for (int i = 0; i < alumnos.size(); i++) {
+      // alumno con codigo a comparar
+      Alumno al = alumnos.get(i);
 
-			if (al.getCodigoAlumno() == codigo) {
-				alumno = al;
-			}
-		}
+      if (al.getCodigoAlumno() == codigo) {
+        alumno = al;
+      }
+    }
 
-		return alumno;
-	}
+    return alumno;
+  }
 
-	@Override
-	public boolean delete(final int id) {
-		int i = 0, longitud = alumnos.size();
-		boolean encontrado = false;
-		// || --> OR
-		// && --> AND
+  @Override
+  public boolean delete(final int id) {
+    int i = 0, longitud = alumnos.size();
+    boolean encontrado = false;
+    // || --> OR
+    // && --> AND
 
-		while (i < longitud && encontrado == false) {
-			if (alumnos.get(i).getCodigoAlumno() == id) {
-				alumnos.remove(i);
-				encontrado = true;
-			}
+    while (i < longitud && encontrado == false) {
+      if (alumnos.get(i).getCodigoAlumno() == id) {
+        alumnos.remove(i);
+        encontrado = true;
+      }
 
-			i++;
-		}
-		return encontrado;
-	}
+      i++;
+    }
+    return encontrado;
+  }
 
-	@Override
-	public int create(final Alumno alumno) {
-		int posicion = Alumno.CODIGOALUMNO;
+  @Override
+  public int create(final Alumno alumno) {
+    int posicion = Alumno.CODIGOALUMNO;
 
-		if (alumnos.add(alumno)) {
+    if (alumnos.add(alumno)) {
 
-			// se captura el código de la base de datos
-			posicion = i;
-			i++;
-		}
+      // se captura el código de la base de datos
+      posicion = i;
+      i++;
+    }
 
-		return posicion;
-	}
+    return posicion;
+  }
 
-	@Override
-	public int update(final Alumno alumno) {
+  @Override
+  public int update(final Alumno alumno) {
 
-		for (Alumno al : alumnos) {
-			// encontrar por id
-			if (al.getCodigoAlumno() == alumno.getCodigoAlumno()) {
-				// capturar la posicon
-				int i = alumnos.indexOf(al);
-				// lo vamos machacar
-				// alumnos[i] = alumno;
-				alumnos.add(i, alumno);
-			}
-		}
-		return alumno.getCodigoAlumno();
-	}
+    for (Alumno al : alumnos) {
+      // encontrar por id
+      if (al.getCodigoAlumno() == alumno.getCodigoAlumno()) {
+        // capturar la posicon
+        int index = alumnos.indexOf(al);
+        // lo vamos machacar
+        // alumnos[i] = alumno;
+        alumnos.add(index, alumno);
+      }
+    }
+    return alumno.getCodigoAlumno();
+  }
 
-	private void init() {
-		i = 0;
-		alumnos = new ArrayList<Alumno>();
-		Alumno alumno = null;
+  private void init() {
+    i = 0;
+    alumnos = new ArrayList<Alumno>();
+    Alumno alumno = null;
 
-		SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
-		// GregorianCalendar calendar = new
-// GregorianCalendar();
+    SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
+    // GregorianCalendar calendar = new
+    // GregorianCalendar();
 
-		try {
-			alumno = new Alumno();
-			alumno.setCodigoAlumno(i);
-			alumno.setNombre("David");
-			alumno.setApellidos("Aranzadi");
-			alumno.setnHermanos(0);
-			alumno.setfNacimiento(fmt.parse("12/09/1990"));
-			// calendar.setTime(fmt.parse("12/09/1990"));
+    try {
+      alumno = new Alumno();
+      alumno.setCodigoAlumno(i);
+      alumno.setNombre("David");
+      alumno.setApellidos("Aranzadi");
+      alumno.setnhermanos(0);
+      alumno.setfnacimiento(fmt.parse("12/09/1990"));
+      // calendar.setTime(fmt.parse("12/09/1990"));
 
-			alumnos.add(alumno);
-			i++;
-		} catch (AlumnoException e) {
-			e.printStackTrace();
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
+      alumnos.add(alumno);
+      i++;
+    } catch (AlumnoException e) {
+      e.printStackTrace();
+    } catch (ParseException e) {
+      e.printStackTrace();
+    }
 
-		try {
-			alumno = new Alumno();
-			alumno.setCodigoAlumno(i);
-			alumno.setNombre("Maria");
-			alumno.setApellidos("Gonzalez");
-			alumnos.add(alumno);
-			i++;
-		} catch (AlumnoException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+    try {
+      alumno = new Alumno();
+      alumno.setCodigoAlumno(i);
+      alumno.setNombre("Maria");
+      alumno.setApellidos("Gonzalez");
+      alumnos.add(alumno);
+      i++;
+    } catch (AlumnoException e) {
+      e.printStackTrace();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
 
-		try {
-			alumno = new Alumno();
-			alumno.setCodigoAlumno(i);
-			alumno.setNombre("Alexander");
-			alumno.setApellidos("Revuelta");
-			alumnos.add(alumno);
-			i++;
-		} catch (AlumnoException e) {
-			e.printStackTrace();
-		}
-		Alumno al;
-		try {
-			al = new Alumno();
-			if (alumno.equals(al)) {
+    try {
+      alumno = new Alumno();
+      alumno.setCodigoAlumno(i);
+      alumno.setNombre("Alexander");
+      alumno.setApellidos("Revuelta");
+      alumnos.add(alumno);
+      i++;
+    } catch (AlumnoException e) {
+      e.printStackTrace();
+    }
+    Alumno al;
+    try {
+      al = new Alumno();
+      if (alumno.equals(al)) {
 
-			}
-		} catch (AlumnoException e1) {
-			e1.printStackTrace();
-		}
+      }
+    } catch (AlumnoException e1) {
+      e1.printStackTrace();
+    }
 
-		try {
-			alumno = new Alumno();
-			alumno.setCodigoAlumno(i);
-			alumno.setNombre("Alain");
-			alumno.setApellidos("Revuelta");
-			alumnos.add(alumno);
-			i++;
-		} catch (AlumnoException e) {
-			e.printStackTrace();
-		}
+    try {
+      alumno = new Alumno();
+      alumno.setCodigoAlumno(i);
+      alumno.setNombre("Alain");
+      alumno.setApellidos("Revuelta");
+      alumnos.add(alumno);
+      i++;
+    } catch (AlumnoException e) {
+      e.printStackTrace();
+    }
 
-		try {
-			alumno = new Alumno();
-			alumno.setCodigoAlumno(i);
-			alumno.setNombre("Carlos");
-			alumno.setApellidos("Mateo");
-			alumnos.add(alumno);
-			i++;
-		} catch (AlumnoException e) {
-			e.printStackTrace();
-		}
-		Collections.sort(alumnos);
-	}
+    try {
+      alumno = new Alumno();
+      alumno.setCodigoAlumno(i);
+      alumno.setNombre("Carlos");
+      alumno.setApellidos("Mateo");
+      alumnos.add(alumno);
+      i++;
+    } catch (AlumnoException e) {
+      e.printStackTrace();
+    }
+    Collections.sort(alumnos);
+  }
 }
