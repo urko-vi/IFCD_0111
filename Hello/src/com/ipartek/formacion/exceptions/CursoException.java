@@ -6,16 +6,16 @@ public class CursoException extends Exception {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
-	 * {@code}int Código de la excepción. 
+	 * {@code}int Código de la excepción.
 	 */
 	private transient int codigo;
 	/**
-	 *{@code}int Constante de código de error del código de curso. 
+	 * {@code}int Constante de código de error del código de curso.
 	 */
 	public static final int COD_ERROR_CURSO = 10;
-	
+
 	/**
 	 * {@code}int Constante de código de error del precio del curso
 	 */
@@ -28,14 +28,16 @@ public class CursoException extends Exception {
 	 * {@code}String constante del texto del mensaje del precio del curso
 	 */
 	public static final String MSG_ERROR_PRECIO = "El precio introducido es incorrecto";
+
 	public CursoException() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	public CursoException(String mensage,int pcodigo){
+
+	public CursoException(String mensage, int pcodigo) {
 		super(mensage);
-		this.codigo =  pcodigo;
+		codigo = pcodigo;
 	}
+
 	public CursoException(String message, Throwable cause,
 			boolean enableSuppression, boolean writableStackTrace) {
 		super(message, cause, enableSuppression, writableStackTrace);
@@ -44,7 +46,6 @@ public class CursoException extends Exception {
 
 	public CursoException(String message, Throwable cause) {
 		super(message, cause);
-		// TODO Auto-generated constructor stub
 	}
 
 	public CursoException(String message) {
@@ -56,9 +57,9 @@ public class CursoException extends Exception {
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}
+
 	public int getCodigo() {
 		return codigo;
 	}
-	
-	
+
 }

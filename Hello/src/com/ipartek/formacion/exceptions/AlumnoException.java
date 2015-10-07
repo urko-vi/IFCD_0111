@@ -9,11 +9,11 @@ package com.ipartek.formacion.exceptions;
  */
 /**
  * 
- * AlumnoException es una {@code}Exception que se encarga de gesionar los errores de {@code}Alumno
+ * AlumnoException es una {@code}Exception que se encarga de gesionar los
+ * errores de {@code}Alumno
  *
  */
 public class AlumnoException extends Exception {
-
 
 	private transient int codigo;
 	/**
@@ -29,7 +29,7 @@ public class AlumnoException extends Exception {
 	 * Código de error número de hermanos no valido.
 	 */
 	public static final int COD_NHERMANOS_NO_VALIDO = 20;
-	
+
 	/**
 	 * {@code}int codigo de error de fecha de nacimiento no valida
 	 */
@@ -37,50 +37,44 @@ public class AlumnoException extends Exception {
 	/**
 	 * {@code}String Mensaje de texto para código de alumno
 	 */
-	public static final String MSG_CODIGO_NO_VALIDO ="El código de alumno introducido no es valido";
+	public static final String MSG_CODIGO_NO_VALIDO = "El código de alumno introducido no es valido";
 	/**
 	 * {@code}String Mensaje de texto para el numero de hermanos
 	 */
-	public static final String MSG_NHERMANOS_NO_VALIDO ="El número de hermnos introducido no es valido";
+	public static final String MSG_NHERMANOS_NO_VALIDO = "El número de hermnos introducido no es valido";
 	/**
 	 * {@code}String Mensaje de texto para fecha de nacimiento no valida.
 	 */
-	public static final String MSG_FECHANACIMIENTO_NO_VALIDA ="La fecha de nacimiento introducida no es valida";
-	
+	public static final String MSG_FECHANACIMIENTO_NO_VALIDA = "La fecha de nacimiento introducida no es valida";
+
 	public AlumnoException() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public AlumnoException(String mensage,int pcodigo){
+
+	public AlumnoException(String mensage, int pcodigo) {
 		super(mensage);
-		this.codigo = pcodigo;
+		codigo = pcodigo;
 	}
 
 	public AlumnoException(String arg0, Throwable arg1, boolean arg2,
 			boolean arg3) {
 		super(arg0, arg1, arg2, arg3);
-		// TODO Auto-generated constructor stub
-	}
 
+	}
 
 	public AlumnoException(String arg0, Throwable arg1) {
 		super(arg0, arg1);
-		// TODO Auto-generated constructor stub
-	}
 
+	}
 
 	public AlumnoException(String arg0) {
 		super(arg0);
-		// TODO Auto-generated constructor stub
 	}
-
 
 	public AlumnoException(Throwable arg0) {
 		super(arg0);
-		// TODO Auto-generated constructor stub
 	}
-
 
 	@Override
 	public String getMessage() {
@@ -91,8 +85,5 @@ public class AlumnoException extends Exception {
 	public int getCodigo() {
 		return codigo;
 	}
-
-
-	
 
 }
