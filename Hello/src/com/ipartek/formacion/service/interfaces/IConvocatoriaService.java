@@ -33,12 +33,12 @@ public interface IConvocatoriaService {
    *          <code>int</code> codigo de la <code>Convocatoria</code>.
    * @return <code>Convocatoria</code>.
    */
-  public Convocatoria getById(int codigoConcovocatoria);
+  public Convocatoria getById(int codigoConvocatoria);
 
   /**
    * Actualiza los datos de la <code>Convocatoria</code>.
    *
-   * @param codigoConcovocatoria
+   * @param codigoConvocatoria
    *          <code>int</code> codigo de la <code>Convocatoria</code>.
    * @return <code>Convocatoria</code>.
    */
@@ -47,10 +47,10 @@ public interface IConvocatoriaService {
   /**
    * Borra una convocatoria dado su codigo.
    *
-   * @param codigoConcovocatoria
+   * @param codigoConvocatoria
    *          <code>int</code>
    * @return <code>boolean</code>
    */
-  public boolean delete(int codigoConcovocatoria);
+  public boolean delete(int codigoConvocatoria);
 
 }

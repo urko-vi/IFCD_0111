@@ -3,6 +3,7 @@ package com.ipartek.formacion.controller;
 import com.ipartek.formacion.bean.Curso;
 import com.ipartek.formacion.bean.excepciones.CursoException;
 import com.ipartek.formacion.service.CursoService;
+import com.ipartek.formacion.service.exceptions.CursoServiceException;
 import com.ipartek.formacion.util.Constantes;
 
 import java.io.IOException;
@@ -77,7 +78,12 @@ public class CursoServlet extends HttpServlet {
     Curso curso = null;
     // obtenener datos de un curso
     CursoService cs = new CursoService();
-    curso = cs.getById(codigoCurso);
+    try {
+      curso = cs.getById(codigoCurso);
+    } catch (CursoServiceException e) {
+      // TODO mostrar en fichero de trazas
+      e.printStackTrace();
+    }
     // cargar el distpacher
     distpacher = request.getRequestDispatcher(Constantes.JSP_BACK_CURSO_FORM);
     // guardar datos del curso en la request
@@ -122,7 +128,11 @@ public class CursoServlet extends HttpServlet {
       case Constantes.OP_UPDATE:
         cs = new CursoService();
         curso = obtenerParametrosCurso(request);
-        cs.update(curso);
+        try {
+          cs.update(curso);
+        } catch (CursoServiceException e) {
+          // TODO generar trazas
+        }
         break;
       default:
 

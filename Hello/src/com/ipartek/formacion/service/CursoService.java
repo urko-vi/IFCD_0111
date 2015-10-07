@@ -3,6 +3,7 @@ package com.ipartek.formacion.service;
 import com.ipartek.formacion.bean.Alumno;
 import com.ipartek.formacion.bean.Curso;
 import com.ipartek.formacion.bean.excepciones.CursoException;
+import com.ipartek.formacion.service.exceptions.CursoServiceException;
 import com.ipartek.formacion.service.interfaces.ICursoService;
 import com.ipartek.formacion.util.TipoCurso;
 
@@ -32,26 +33,35 @@ public class CursoService implements ICursoService {
   }
 
   @Override
-  public Curso getById(final int codigo) {
+  public Curso getById(final int codigo) throws CursoServiceException {
     Curso curso = null;
     int posicion = Curso.CODIGO_CURSO;
 
     posicion = encontrarCurso(codigo);
-    // TODO controlar en el caso de que la posición devuelta sea -1
-    curso = cursos.get(posicion);
+    if (posicion > Curso.CODIGO_CURSO) {
+      curso = cursos.get(posicion);
+    } else {
+      throw new CursoServiceException(CursoServiceException.MSG_CURSO_NO_ENCONTRADO,
+          CursoServiceException.COD_CURSO_NO_ENCONTRADO);
+    }
 
     return curso;
   }
 
   @Override
-  public int update(final Curso curso) {
+  public int update(final Curso curso) throws CursoServiceException {
     int posicion = -1;
     int codigo = Curso.CODIGO_CURSO;
-    // TODO controlar en el caso de que la posición devuelta sea -1
+
     posicion = encontrarCurso(curso.getCodigo());
 
-    cursos.add(posicion, curso);
-    codigo = curso.getCodigo();
+    if (posicion > Curso.CODIGO_CURSO) {
+      cursos.add(posicion, curso);
+      codigo = curso.getCodigo();
+    } else {
+      throw new CursoServiceException(CursoServiceException.MSG_CURSO_NO_ENCONTRADO,
+          CursoServiceException.COD_CURSO_NO_ENCONTRADO);
+    }
     return codigo;
   }
 
@@ -76,8 +86,14 @@ public class CursoService implements ICursoService {
    * @return
    */
   public Map<Integer, Alumno> readAlumnos(final int codigoCurso) {
-    Curso curso = getById(codigoCurso);
-    Map<Integer, Alumno> listado = curso.getListadoAlumnos();
+    Curso curso = null;
+    Map<Integer, Alumno> listado = null;
+    try {
+      curso = getById(codigoCurso);
+      listado = curso.getListadoAlumnos();
+    } catch (CursoServiceException e) {
+      e.printStackTrace();
+    }
 
     /*
      * for(Map.Entry<Integer, Alumno> entry: listado.entrySet()){ Integer codigo = entry.getKey();

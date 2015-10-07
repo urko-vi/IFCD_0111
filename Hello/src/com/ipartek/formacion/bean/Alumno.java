@@ -4,6 +4,7 @@ import com.ipartek.formacion.bean.excepciones.AlumnoException;
 import com.ipartek.formacion.bean.excepciones.CursoException;
 import com.ipartek.formacion.bean.interfaces.IMatriculable;
 import com.ipartek.formacion.service.CursoService;
+import com.ipartek.formacion.service.exceptions.CursoServiceException;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -155,10 +156,11 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   }
 
   /**
+   * @throws CursoServiceException
    *
    */
   @Override
-  public void matricularCurso(final int codigoCurso) {
+  public void matricularCurso(final int codigoCurso) throws CursoServiceException {
     CursoService cs = new CursoService();
     Curso curso = cs.getById(codigoCurso);
     Map<Integer, Alumno> listadoAlumnos = curso.getListadoAlumnos();
@@ -169,9 +171,11 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
 
   /**
    * Este metodo borra a un <code>Alumno</code> del <code>Map</code> de alumnos.
+   * 
+   * @throws CursoServiceException
    */
   @Override
-  public void desmatricularCurso(final int codigoCurso) {
+  public void desmatricularCurso(final int codigoCurso) throws CursoServiceException {
     CursoService cs = new CursoService();
     Curso curso = cs.getById(codigoCurso);
     Map<Integer, Alumno> listadoAlumnos = curso.getListadoAlumnos();

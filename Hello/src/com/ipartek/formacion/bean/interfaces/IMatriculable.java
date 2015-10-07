@@ -1,7 +1,19 @@
 package com.ipartek.formacion.bean.interfaces;
 
-public interface IMatriculable {
-  public void matricularCurso(int codigoCurso);
+import com.ipartek.formacion.service.exceptions.CursoServiceException;
 
-  public void desmatricularCurso(int codigoCurso);
+public interface IMatriculable {
+  /**
+   *
+   * @param codigoCurso
+   * @throws CursoServiceException
+   */
+  public void matricularCurso(int codigoCurso) throws CursoServiceException;
+
+  /**
+   * 
+   * @param codigoCurso
+   * @throws CursoServiceException
+   */
+  public void desmatricularCurso(int codigoCurso) throws CursoServiceException;
 }
