@@ -77,7 +77,7 @@ public class LoginServlet extends HttpServlet {
       IAlumnoService as = new AlumnoService();
       List<Alumno> alumnos = as.getAll();
       RequestDispatcher dispatcher = null;
-      dispatcher = request.getRequestDispatcher(Constantes.PAGINA_INICIAL);
+      dispatcher = request.getRequestDispatcher(Constantes.JSP_BACK_INDEX);
       request.setAttribute(Constantes.ATT_LISTADO_ALUMNOS, alumnos);
       // response.sendRedirect(Constantes.PAGINA_INICIAL);
       dispatcher.forward(request, response);

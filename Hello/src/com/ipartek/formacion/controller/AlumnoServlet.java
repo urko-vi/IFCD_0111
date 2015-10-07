@@ -22,9 +22,9 @@ import javax.servlet.http.HttpServletResponse;
 public class AlumnoServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
-  RequestDispatcher dispatcher = null;
+  private RequestDispatcher dispatcher = null;
 
-  int id = Alumno.CODIGOALUMNO;
+  private int id = Alumno.CODIGOALUMNO;
 
   /**
    * @see HttpServlet#HttpServlet().
@@ -50,7 +50,7 @@ public class AlumnoServlet extends HttpServlet {
 
     // recoger paramtro identificador Persona
     try {
-      id = Integer.parseInt(req.getParameter("id"));
+      id = Integer.parseInt(req.getParameter(Constantes.PAR_CODIGO));
     } catch (Exception e) {
       id = Alumno.CODIGOALUMNO;
     }
@@ -67,11 +67,6 @@ public class AlumnoServlet extends HttpServlet {
     // la existencia de la ID de Alumno es lo que
     // diferencia si
     // es un getAll o un getById
-    if (request.getParameter("id") != null) {
-      id = Integer.parseInt(request.getParameter("id"));
-    } else {
-      id = Alumno.CODIGOALUMNO;
-    }
 
     // comprobar si es getAll o getById
     if (id == Alumno.CODIGOALUMNO) {
@@ -105,12 +100,12 @@ public class AlumnoServlet extends HttpServlet {
         Alumno al = getDatosAlumno(request);
         as.update(al);
       }
-      break;
+        break;
       case Constantes.OP_CREATE: {
         Alumno al = getDatosAlumno(request);
         as.create(al);
       }
-      break;
+        break;
       case Constantes.OP_LIST:
         as.getAll();
         break;

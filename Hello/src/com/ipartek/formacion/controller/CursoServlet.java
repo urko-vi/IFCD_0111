@@ -47,7 +47,7 @@ public class CursoServlet extends HttpServlet {
   protected void service(final HttpServletRequest request, final HttpServletResponse response)
       throws ServletException, IOException {
     try {
-      codigoCurso = Integer.parseInt(request.getParameter(Constantes.PAR_CODIGO_CURSO));
+      codigoCurso = Integer.parseInt(request.getParameter(Constantes.PAR_CODIGO));
     } catch (Exception e) {
       codigoCurso = Curso.CODIGO_CURSO;
     }
