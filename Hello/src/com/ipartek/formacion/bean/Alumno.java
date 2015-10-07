@@ -10,15 +10,17 @@ import com.ipartek.formacion.bean.interfaces.IMatriculable;
 import com.ipartek.formacion.service.CursoService;
 
 /**
- * @author Administrador
+ * Clase de alumno que es la que puede asistir a los cursos.
+ *
+ * @author Administrador.
  */
 public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno> {
   /**
-   *
+   * Constante para código de alumno invalido.
    */
   public static final int CODIGOALUMNO = -1;
   /**
-   * 
+   * Constante para numero de hermanos validos.
    */
   public static final int NHERMANOS = 0;
 
@@ -28,6 +30,11 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   private Date fnacimiento;
   private int nhermanos;
 
+  /**
+   * Constructor en blanco de la clase Alumno.
+   *
+   * <code>@throws</code> una <code>Exception</code> de tipo <code>AlumnoException</code>
+   */
   public Alumno() throws AlumnoException {
     setCodigoUsuario(Alumno.CODIGOALUMNO);
     setNombre("");
@@ -38,16 +45,16 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   }
 
   /**
-   * Es el constructor con paremetros de la clase Alumno
+   * Es el constructor con paremetros de la clase Alumno.
    *
-   * @param codigoAlumno
-   *          es el codigo del alumno
-   * @param nombre
-   * @param apellidos
-   * @param fNacimiento
-   * @param nHermanos
+   * <code>int</code> @param codigoAlumno es el codigo del alumno.
+   *
+   * <code>String</code> @param nombre es el nombre del alumno. <code>String</code> @param apellidos
+   * es los apellidos del alumno. <code>Date</code>@param fNacimiento es la fecha de nacimiento del
+   * alumnos. <code>int</code> @param nHermanos son el numero de hermanos del alumno.
+   *
    * @param dni
-   * @throws AlumnoException
+   *          <code>@throws</code> una <code>Exception</code> de tipo <code>AlumnoException</code>
    */
   public Alumno(final int codigoAlumno, final String nombre, final String apellidos,
       final Date fnacimiento, final int nhermanos, final String dni) throws AlumnoException {
@@ -69,8 +76,8 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   }
 
   /**
-   * 
-   * @return
+   *
+   * @return <code>String</code> devuelve el nombre.
    */
   public String getNombre() {
     return nombre;
@@ -92,6 +99,11 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
     return fnacimiento;
   }
 
+  /**
+   *
+   * @param fnacimiento
+   * @throws AlumnoException
+   */
   public void setfnacimiento(final Date fnacimiento) throws AlumnoException {
 
     Calendar cal = Calendar.getInstance();
@@ -126,6 +138,9 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
     }
   }
 
+  /**
+   *
+   */
   @Override
   public void matricularCurso(final int codigoCurso) {
     CursoService cs = new CursoService();
@@ -136,6 +151,9 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
     cs.update(c);
   }
 
+  /**
+   *
+   */
   @Override
   public void desmatricularCurso(final int codigoCurso) {
     CursoService cs = new CursoService();
@@ -147,6 +165,11 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
 
   }
 
+  /**
+   *
+   * @author va00
+   *
+   */
   public class CursoMatriculado extends Curso {
     Date fechaMatriculacion;
     Alumno alumno;
@@ -161,7 +184,7 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   }
 
   /**
-   * 
+   *
    */
   @Override
   public int compareTo(final Alumno alumno) {
