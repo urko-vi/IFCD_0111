@@ -29,11 +29,13 @@
                     <ul class="nav" id="side-menu">                        
                         <li>
                             <a class="active" href="<%=Constantes.SERVLET_ALUMNOS%>" title="Gestionar Alumnos"><i class="fa fa-dashboard fa-fw"></i> Alumnos</a>
-                            <a class="active" href="<%=Constantes.SERVLET_LOGIN %>"title="Gestionar Calificaciones"> </a>
                         </li>
                         <li>
-                            <a class="active" href="<%= Constantes.SERVLET_LOGOUT %>" title="Gestionar Cursos"><i class="fa fa-user fa-fw"></i>Cursos</a>
-                        </li>                       
+                            <a class="active" href="<%= Constantes.SERVLET_CURSOS %>" title="Gestionar Cursos"><i class="fa fa-user fa-fw"></i>Cursos</a>
+                        </li>    
+                        <li>
+							<a class="active" href="<%=Constantes.SERVLET_LOGIN %>"title="Gestionar Convocatorias"><i class="fa fa-user fa-fw"></i>Convocatorias </a>
+                        </li>                   
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

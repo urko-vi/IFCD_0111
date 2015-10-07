@@ -49,4 +49,14 @@
     <servlet-name>CursoServlet</servlet-name>
     <url-pattern>/curso.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ConvocatoriaServlet</display-name>
+    <servlet-name>ConvocatoriaServlet</servlet-name>
+    <servlet-class>com.ipartek.formacion.controller.ConvocatoriaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConvocatoriaServlet</servlet-name>
+    <url-pattern>/convocatoria.do</url-pattern>
+  </servlet-mapping>
 </web-app>

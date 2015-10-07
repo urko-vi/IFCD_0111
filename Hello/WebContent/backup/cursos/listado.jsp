@@ -7,7 +7,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     		
-	<p><a href="<%=Constantes.JSP_BACK_CURSO_FORM%>" title="crear nuevo curso">cree un nuevo curso</a></p>
+	<p><a class="btn btn-primary" href="<%=Constantes.JSP_BACK_CURSO_FORM%>" title="crear nuevo curso">cree un nuevo curso</a></p>
 	<%
 		List<Curso> cursos = (List<Curso>)request.getAttribute(Constantes.ATT_LISTADO_ALUMNOS);
 		if (cursos == null){
