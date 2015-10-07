@@ -5,14 +5,23 @@ import java.util.List;
 import com.ipartek.formacion.bean.Convocatoria;
 
 public interface IConvocatoriaService {
-	public List<Convocatoria> getAll();
+  /**
+   * 
+   * @return
+   */
+  public List<Convocatoria> getAll();
 
-	public int create(Convocatoria solicitud);
+  /**
+   * 
+   * @param solicitud
+   * @return
+   */
+  public int create(Convocatoria solicitud);
 
-	public Convocatoria getById(int codigoSolicitud);
+  public Convocatoria getById(int codigoSolicitud);
 
-	public int update(Convocatoria solicitud);
+  public int update(Convocatoria solicitud);
 
-	public boolean delete(int codigoSolicitud);
+  public boolean delete(int codigoSolicitud);
 
 }

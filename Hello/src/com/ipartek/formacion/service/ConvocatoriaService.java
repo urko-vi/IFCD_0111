@@ -7,34 +7,34 @@ import com.ipartek.formacion.service.interfaces.IConvocatoriaService;
 
 public class ConvocatoriaService implements IConvocatoriaService {
 
-	@Override
-	public List<Convocatoria> getAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+  @Override
+  public List<Convocatoria> getAll() {
+    // TODO Auto-generated method stub
+    return null;
+  }
 
-	@Override
-	public int create(Convocatoria solicitud) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+  @Override
+  public int create(Convocatoria solicitud) {
+    // TODO Auto-generated method stub
+    return 0;
+  }
 
-	@Override
-	public Convocatoria getById(int codigoSolicitud) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+  @Override
+  public Convocatoria getById(int codigoSolicitud) {
+    // TODO Auto-generated method stub
+    return null;
+  }
 
-	@Override
-	public int update(Convocatoria solicitud) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+  @Override
+  public int update(Convocatoria solicitud) {
+    // TODO Auto-generated method stub
+    return 0;
+  }
 
-	@Override
-	public boolean delete(int codigoSolicitud) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+  @Override
+  public boolean delete(int codigoSolicitud) {
+    // TODO Auto-generated method stub
+    return false;
+  }
 
 }
