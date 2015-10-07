@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ipartek.formacion.bean.Curso;
+import com.ipartek.formacion.exceptions.CursoException;
 import com.ipartek.formacion.service.CursoService;
 import com.ipartek.formacion.util.Constantes;
 
@@ -106,7 +107,54 @@ public class CursoServlet extends HttpServlet {
 	protected void doPost(final HttpServletRequest request,
 			final HttpServletResponse response) throws ServletException,
 			IOException {
+		// controlar update, delete, create
+		int operacion = -1;
+		CursoService cs = null;
+		Curso curso = null;
+		try {
+			operacion = Integer.parseInt(request
+					.getParameter(Constantes.OP_KEY));
+		} catch (Exception e) {
+			operacion = -1;
+		}
 
+		switch (operacion) {
+			case Constantes.OP_CREATE:
+				cs = new CursoService();
+				curso = obtenerParametrosCurso(request);
+				cs.create(curso);
+				break;
+			case Constantes.OP_DELETE:
+				cs = new CursoService();
+				cs.delete(codigoCurso);
+				break;
+			case Constantes.OP_UPDATE:
+				cs = new CursoService();
+				curso = obtenerParametrosCurso(request);
+				cs.update(curso);
+				break;
+			default:
+
+				break;
+		}
+		distpacher = request
+				.getRequestDispatcher(Constantes.JSP_BACK_CURSO_LISTADO);
+		distpacher.forward(request, response);
+	}
+
+	private Curso obtenerParametrosCurso(HttpServletRequest request) {
+		Curso curso = null;
+
+		try {
+			curso = new Curso();
+			curso.setNombre(request.getParameter(""));
+			// recogemos datos del resto de parametros
+		} catch (CursoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return curso;
 	}
 
 }

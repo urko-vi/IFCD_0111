@@ -36,6 +36,7 @@ public class Constantes {
 	public static final String SERVLET_LOGIN = "login.do";
 	public static final String SERVLET_LOGOUT = "logout.do";
 	public static final String SERVLET_ALUMNOS = "alumnos.do";
+	public static final String SERVLET_CURSOS = "cursos.do";
 
 	public static final String RUTA_BACKUP = "backup/";
 	public static final String JSP_BACK_INDEX = Constantes.RUTA_BACKUP

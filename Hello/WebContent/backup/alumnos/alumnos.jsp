@@ -10,7 +10,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     		
-	<p><a href="<%=Constantes.JSP_BACK_ALUMNO_FORM%>" title="crear nueva persona">cree una nueva persona</a></p>
+	<p><a href="<%=Constantes.JSP_BACK_ALUMNO_FORM%>" title="crear nuevo alumno">cree una nuevo alumno</a></p>
 	<%
 		List<Alumno> alumnos = (List<Alumno>)request.getAttribute(Constantes.ATT_LISTADO_ALUMNOS);
 		if (alumnos == null){
