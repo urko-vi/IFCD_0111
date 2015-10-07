@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,27 +19,18 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class AlumnoServlet.
  */
 public class AlumnoServlet extends HttpServlet {
+  /**
+   * <code>long</code> consante que serializa la clase.
+   */
   private static final long serialVersionUID = 1L;
-
+  /**
+   * <code>RequestDispatcher</code> para redigir el trafico.
+   */
   private RequestDispatcher dispatcher = null;
-
-  private int id = Alumno.CODIGOALUMNO;
-
   /**
-   * @see HttpServlet#HttpServlet().
+   * <code>int</code> el codigo de <code>Alumno</code>.
    */
-  public AlumnoServlet() {
-    super();
-  }
-
-  /**
-   * @see Servlet#init(ServletConfig).
-   */
-  @Override
-  public void init(final ServletConfig config) throws ServletException {
-
-    super.init(config);
-  }
+  private transient int codigoAlumno = Alumno.CODIGOALUMNO;
 
   @Override
   protected void service(final HttpServletRequest req, final HttpServletResponse resp)
@@ -50,16 +40,16 @@ public class AlumnoServlet extends HttpServlet {
 
     // recoger paramtro identificador Persona
     try {
-      id = Integer.parseInt(req.getParameter(Constantes.PAR_CODIGO));
+      codigoAlumno = Integer.parseInt(req.getParameter(Constantes.PAR_CODIGO));
     } catch (Exception e) {
-      id = Alumno.CODIGOALUMNO;
+      codigoAlumno = Alumno.CODIGOALUMNO;
     }
 
     super.service(req, resp);
   }
 
   /**
-   * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+   * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response).
    */
   @Override
   protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
@@ -69,7 +59,7 @@ public class AlumnoServlet extends HttpServlet {
     // es un getAll o un getById
 
     // comprobar si es getAll o getById
-    if (id == Alumno.CODIGOALUMNO) {
+    if (codigoAlumno == Alumno.CODIGOALUMNO) {
       getAll(request);
     } else {
       getById(request);
@@ -79,38 +69,38 @@ public class AlumnoServlet extends HttpServlet {
   }
 
   /**
-   * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+   * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response).
    */
   @Override
   protected void doPost(final HttpServletRequest request, final HttpServletResponse response)
       throws ServletException, IOException {
-    int op = -1;
+    int opcion = -1;
     try {
-      op = Integer.parseInt((String) request.getAttribute(Constantes.OP_KEY));
+      opcion = Integer.parseInt((String) request.getAttribute(Constantes.OP_KEY));
     } catch (Exception e) {
       getAll(request);
       dispatcher.forward(request, response);
     }
     IAlumnoService as = new AlumnoService();
-    switch (op) {
+    switch (opcion) {
       case Constantes.OP_DELETE:
-        as.delete(id);
+        as.delete(codigoAlumno);
         break;
       case Constantes.OP_UPDATE: {
         Alumno al = getDatosAlumno(request);
         as.update(al);
       }
-        break;
+      break;
       case Constantes.OP_CREATE: {
         Alumno al = getDatosAlumno(request);
         as.create(al);
       }
-        break;
+      break;
       case Constantes.OP_LIST:
         as.getAll();
         break;
       case Constantes.OP_DETAIL:
-        as.getById(id);
+        as.getById(codigoAlumno);
         break;
       default:
         break;
@@ -123,7 +113,7 @@ public class AlumnoServlet extends HttpServlet {
     try {
       alum = new Alumno();
 
-      alum.setCodigoUsuario(id);
+      alum.setCodigoUsuario(codigoAlumno);
       alum.setNombre(request.getParameter(Constantes.PAR_NOMBRE));
       alum.setApellidos(request.getParameter(Constantes.PAR_APELLIDOS));
     } catch (AlumnoException e) {
@@ -137,7 +127,7 @@ public class AlumnoServlet extends HttpServlet {
 
     Alumno al = null;
     IAlumnoService as = new AlumnoService();
-    al = as.getById(id);
+    al = as.getById(codigoAlumno);
     request.setAttribute(Constantes.ATT_USUARIO, al);
 
     dispatcher = request.getRequestDispatcher(Constantes.JSP_BACK_ALUMNO_FORM);
