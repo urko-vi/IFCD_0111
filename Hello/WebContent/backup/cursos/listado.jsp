@@ -39,11 +39,11 @@
 		                </td>
 		                <td><%=curso.getPrecio()%> </td>
 		                <td>
-		                	<a href="<%=Constantes.SERVLET_CURSOS+"?"+Constantes.PAR_CODIGO_CURSO+"="+curso.getCodigo()%>">
+		                	<a href="<%=Constantes.SERVLET_CURSOS+"?"+Constantes.PAR_CODIGO+"="+curso.getCodigo()%>">
 		                		<button type="button" class="btn btn-primary">Editar</button>
 		                	</a>
 		                	<form action="<%=Constantes.SERVLET_CURSOS%>" method="post">
-		                		<input type="hidden" name="<%=Constantes.PAR_CODIGO_CURSO %>" value="<%=curso.getCodigo()%>">
+		                		<input type="hidden" name="<%=Constantes.PAR_CODIGO %>" value="<%=curso.getCodigo()%>">
 		                		<input type="hidden" name="<%=Constantes.OP_KEY%>" value="<%=Constantes.OP_DELETE%>">
 		                		<input type="submit" class="btn btn-outline btn-danger btn-xs" value="Eliminar">
 		                	</form>		                	

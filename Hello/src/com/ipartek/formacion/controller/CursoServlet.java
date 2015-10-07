@@ -4,6 +4,7 @@ import com.ipartek.formacion.bean.Curso;
 import com.ipartek.formacion.bean.excepciones.CursoException;
 import com.ipartek.formacion.service.CursoService;
 import com.ipartek.formacion.service.exceptions.CursoServiceException;
+import com.ipartek.formacion.service.interfaces.ICursoService;
 import com.ipartek.formacion.util.Constantes;
 
 import java.io.IOException;
@@ -77,7 +78,7 @@ public class CursoServlet extends HttpServlet {
   private void obtenerDatosCurso(final HttpServletRequest request) {
     Curso curso = null;
     // obtenener datos de un curso
-    CursoService cs = new CursoService();
+    ICursoService cs = new CursoService();
     try {
       curso = cs.getById(codigoCurso);
     } catch (CursoServiceException e) {

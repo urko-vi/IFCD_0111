@@ -44,6 +44,10 @@ public final class Constantes {
    * Atributo que sirve para especificar un objeto <code>Curso</code>.
    */
   public static final String ATT_CURSO = "curso";
+  /**
+   * Atributo que sirve para especificar un objeto <code>Convocatoria</code>.
+   */
+  public static final String ATT_CONVOCATORIA = "convocatoria";
   // PARAMETROS
   /**
    * Parametro que sirve para especificar el campo user.
