@@ -19,7 +19,7 @@
 
 		}else{
 			%>
-			<table id="tabla" cellspacing="0" width="100%">
+			<table id="tabla">
 		        <thead>
 		            <tr>
 		                <th>Nombre</th>
@@ -36,17 +36,17 @@
 				%>
 					<tr>
 		                <td>
-		                	<a href="<%=Constantes.SERVLET_ALUMNOS+"?id="+al.getCodigoAlumno()%>">
+		                	<a href="<%=Constantes.SERVLET_ALUMNOS+"?id="+al.getCodigoUsuario()%>">
 		                		<%=al.getNombre()%>
 		                	</a> 
 		                </td>
 		                <td><%=al.getApellidos()%> </td>
 		                <td>
-		                	<a href="<%=Constantes.SERVLET_ALUMNOS+"?id="+al.getCodigoAlumno()%>">
+		                	<a href="<%=Constantes.SERVLET_ALUMNOS+"?id="+al.getCodigoUsuario()%>">
 		                		<button type="button" class="btn btn-primary">Editar</button>
 		                	</a>
 		                	<form action="<%=Constantes.SERVLET_ALUMNOS%>" method="post">
-		                		<input type="hidden" name="id" value="<%=al.getCodigoAlumno()%>">
+		                		<input type="hidden" name="id" value="<%=al.getCodigoUsuario()%>">
 		                		<input type="hidden" name="<%=Constantes.OP_KEY%>" value="<%=Constantes.OP_DELETE%>">
 		                		<input type="submit" class="btn btn-outline btn-danger btn-xs" value="Eliminar">
 		                	</form>		                	

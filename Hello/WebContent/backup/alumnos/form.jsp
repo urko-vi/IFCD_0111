@@ -27,7 +27,7 @@
 	<form action="<%=request.getContextPath()+"/"+Constantes.SERVLET_ALUMNOS%>" method="post" role="form">
 	
 		<div class="form-group">			
-			<input type="hidden" name="id" readonly value="<%=al.getCodigoAlumno()%>" class="form-control">
+			<input type="hidden" name="id" readonly value="<%=al.getCodigoUsuario()%>" class="form-control">
 		</div>	
 		
 		<div class="form-group">
@@ -58,7 +58,7 @@
 	<% //en el caso de que exista dar la opción a borrarlo 
 	if ( !isNew) { %>	
 		<form action="<%=request.getContextPath()+"/"+Constantes.SERVLET_ALUMNOS%>" method="post">
-			<input type="hidden"  name="id"  value="<%=al.getCodigoAlumno()%>">
+			<input type="hidden"  name="id"  value="<%=al.getCodigoUsuario()%>">
 			<input type="hidden" name="<%=Constantes.OP_KEY%>" value="<%=Constantes.OP_DELETE%>">
 			<input type="submit" value="Eliminar" class="btn btn-outline btn-danger">	
 		</form>

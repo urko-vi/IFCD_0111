@@ -33,7 +33,7 @@ if(alumnos!=null){
 		for(Alumno alumno: alumnos) {
 			%>
 			  <tr>
-				<td><%out.print(alumno.getCodigoAlumno());%></td>
+				<td><%out.print(alumno.getCodigoUsuario());%></td>
 				<td><%out.print(alumno.getNombre());  %></td>
 				<td><% out.print(alumno.getApellidos()); %></td>
 			  </tr>

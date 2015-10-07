@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +17,7 @@ import com.ipartek.formacion.service.interfaces.IAlumnoService;
 import com.ipartek.formacion.util.Constantes;
 
 /**
- * Servlet implementation class AlumnoServlet
+ * Servlet implementation class AlumnoServlet.
  */
 public class AlumnoServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
@@ -28,14 +27,14 @@ public class AlumnoServlet extends HttpServlet {
   int id = Alumno.CODIGOALUMNO;
 
   /**
-   * @see HttpServlet#HttpServlet()
+   * @see HttpServlet#HttpServlet().
    */
   public AlumnoServlet() {
     super();
   }
 
   /**
-   * @see Servlet#init(ServletConfig)
+   * @see Servlet#init(ServletConfig).
    */
   @Override
   public void init(final ServletConfig config) throws ServletException {
