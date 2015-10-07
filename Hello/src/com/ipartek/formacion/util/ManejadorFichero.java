@@ -35,7 +35,8 @@ public final class ManejadorFichero {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		} finally {
+		}
+		finally {
 			if (fr != null) {
 				try {
 					fr.close();
@@ -47,4 +48,5 @@ public final class ManejadorFichero {
 		texto.add(palabra);
 		return texto;
 	}
+	// TODO completar manejador fichero
 }
