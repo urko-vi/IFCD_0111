@@ -13,70 +13,74 @@ public final class Constantes {
   // ATRIBUTOS
 
   /**
-   * Atributo que sirve para especificar el dni.
+   * Atributo que sirve para guardar el dni.
    */
   public static final String ATT_DNI = "dni";
   /**
-   * Atributo que sirve para especificar la fecha de nacimiento.
+   * Atributo que sirve para guardar la fecha de nacimiento.
    */
   public static final String ATT_FNACIMIENTO = "fnacimiento";
   /**
-   * Atributo que sirve para especificar una <code>List</code> de <code>Curso</code>.
+   * Atributo que sirve para guardar una <code>List</code> de <code>Curso</code>.
    */
   public static final String ATT_LISTADO_CURSOS = "listado_cursos";
   /**
-   * Atributo que sirve para especificar una <code>List</code> de <code>Alumno</code>.
+   * Atributo que sirve para guardar una <code>List</code> de <code>Alumno</code>.
    */
   public static final String ATT_LISTADO_ALUMNOS = "listado_alumnos";
   /**
-   * Atributo que sirve para especificar una <code>List</code> de <code>Convocatoria</code>.
+   * Atributo que sirve para guardar una <code>List</code> de <code>Convocatoria</code>.
    */
   public static final String ATT_LISTADO_CONVOCATORIAS = "listado_convocatoria";
   /**
-   * Atributo que sirve para especificar un objeto <code>Mensaje</code>.
+   * Atributo que sirve para guardar un objeto <code>Mensaje</code>.
    */
   public static final String ATT_MENSAJE = "mensaje";
   /**
-   * Atributo que sirve para especificar un objeto <code>Usuario</code>.
+   * Atributo que sirve para guardar un objeto <code>Usuario</code>.
    */
   public static final String ATT_USUARIO = "usuario";
   /**
-   * Atributo que sirve para especificar un objeto <code>Alumno</code>.
+   * Atributo que sirve para guardar un objeto <code>Alumno</code>.
    */
   public static final String ATT_ALUMNO = "alumno";
   /**
-   * Atributo que sirve para especificar un objeto <code>Curso</code>.
+   * Atributo que sirve para guardar un objeto <code>Curso</code>.
    */
   public static final String ATT_CURSO = "curso";
   /**
-   * Atributo que sirve para especificar un objeto <code>Convocatoria</code>.
+   * Atributo que sirve para guardar un objeto <code>Convocatoria</code>.
    */
   public static final String ATT_CONVOCATORIA = "convocatoria";
   // PARAMETROS
   /**
-   * Parametro que sirve para especificar el campo user.
+   * Parametro que sirve para pedir el campo user.
    */
   public static final String PAR_USUARIO = "user";
   /**
-   * Parametro que sirve para especificar el campo password.
+   * Parametro que sirve para pedir el campo password.
    */
   public static final String PAR_PASSWORD = "pass";
   /**
-   * Parametro que sirve para especificar el campo clave.
+   * Parametro que sirve para pedir el campo clave.
    */
   public static final String PAR_CODIGO = "id";
   /**
-   * Parametro que sirve para especificar el nombre.
+   * Parametro que sirve para pedir el nombre.
    */
   public static final String PAR_NOMBRE = "nombre";
   /**
-   * Parametro que sirve para especificar el apellidos.
+   * Parametro que sirve para pedir el apellidos.
    */
   public static final String PAR_APELLIDOS = "apellidos";
   /**
-   * Parametro que sirve para especificar el numero de hermanos.
+   * Parametro que sirve para pedir el numero de hermanos.
    */
   public static final String PAR_NHERMANOS = "numero_hermanos";
+  /**
+   * Parametro que sirve para pedir el nombre de la convocatoria.
+   */
+  public static final String PAR_NOMBRE_CONVOCATORIA = "nombre";
   // URLS O DIRECCIONES WEB
   /**
    * Dirección de la página de login.

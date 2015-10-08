@@ -9,12 +9,30 @@ package com.ipartek.formacion.bean.excepciones;
 public class ConvocatoriaException extends Exception {
 
   private static final long serialVersionUID = 1L;
+  private transient int codigo;
 
   /**
-   *
+   * Código de error al introducir un codigo en la convocatoria.
+   * 
    */
-  public ConvocatoriaException() {
-    super();
+  public static final int CODIGO_ERROR_CODIGO_INCORRECTO = 10;
+
+  /**
+   * Mensage de error al introducir un codigo de error en al convocatoria.
+   */
+  public static final String MSG_ERROR_CODIGO_CONVOCATORIA = "Código de error incorrecto";
+
+  /**
+   * Constructor que provee mensage de error y codigo de error.
+   * 
+   * @param mensage
+   *          <code>String</code> mensage de error.
+   * @param codigo
+   *          <code>int</code> codigo de error.
+   */
+  public ConvocatoriaException(String mensage, final int codigo) {
+    super(mensage);
+    this.codigo = codigo;
   }
 
   /**
@@ -52,6 +70,10 @@ public class ConvocatoriaException extends Exception {
    */
   public ConvocatoriaException(Throwable cause) {
     super(cause);
+  }
+
+  public int getCodigo() {
+    return codigo;
   }
 
 }

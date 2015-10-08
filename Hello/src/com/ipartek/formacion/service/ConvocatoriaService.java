@@ -1,6 +1,7 @@
 package com.ipartek.formacion.service;
 
 import com.ipartek.formacion.bean.Convocatoria;
+import com.ipartek.formacion.bean.excepciones.ConvocatoriaException;
 import com.ipartek.formacion.service.interfaces.IConvocatoriaService;
 
 import java.util.ArrayList;
@@ -25,9 +26,15 @@ public class ConvocatoriaService implements IConvocatoriaService {
     convocatorias = new ArrayList<Convocatoria>();
     Convocatoria con = null;
 
-    con = new Convocatoria();
-    con.setCodigo(ConvocatoriaService.index);
-    con.setNombre("Primera Convovatoria");
+    try {
+      con = new Convocatoria();
+      con.setCodigo(ConvocatoriaService.index);
+      con.setNombre("Primera Convovatoria");
+    } catch (ConvocatoriaException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+
     convocatorias.add(con);
     ConvocatoriaService.index++;
   }
@@ -46,9 +53,11 @@ public class ConvocatoriaService implements IConvocatoriaService {
    * Metodo que crea una <code>Convocatoria</code>.
    *
    * @return <code>int</code> codigo de la <code>Convocatoria</code>.
+   * @throws ConvocatoriaException
+   *           en el caso de que el codigo sea negativo.
    */
   @Override
-  public int create(Convocatoria convocatoria) {
+  public int create(Convocatoria convocatoria) throws ConvocatoriaException {
     int codigo = Convocatoria.CODIGO_CONVOCATORIA;
     convocatoria.setCodigo(ConvocatoriaService.index);
 

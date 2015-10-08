@@ -1,6 +1,7 @@
 package com.ipartek.formacion.service.interfaces;
 
 import com.ipartek.formacion.bean.Convocatoria;
+import com.ipartek.formacion.bean.excepciones.ConvocatoriaException;
 
 import java.util.List;
 
@@ -23,8 +24,10 @@ public interface IConvocatoriaService {
    * @param convocatoria
    *          <code>Convocatoria</code>.
    * @return <code>int</code> codigo de la <code>Convocatoria</code>.
+   * @throws ConvocatoriaException
+   *           en el caso de que el codigo sea negativo.
    */
-  public int create(Convocatoria convocatoria);
+  public int create(Convocatoria convocatoria) throws ConvocatoriaException;
 
   /**
    * Obtiene la convocatoria

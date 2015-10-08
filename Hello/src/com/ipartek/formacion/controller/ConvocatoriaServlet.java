@@ -1,11 +1,13 @@
 package com.ipartek.formacion.controller;
 
 import com.ipartek.formacion.bean.Convocatoria;
+import com.ipartek.formacion.bean.excepciones.ConvocatoriaException;
 import com.ipartek.formacion.service.ConvocatoriaService;
 import com.ipartek.formacion.service.interfaces.IConvocatoriaService;
 import com.ipartek.formacion.util.Constantes;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -77,6 +79,11 @@ public class ConvocatoriaServlet extends HttpServlet {
   }
 
   private void listarTodasConvocatorias(HttpServletRequest request) {
+    List<Convocatoria> convocatorias = null;
+    IConvocatoriaService cons = new ConvocatoriaService();
+    dispatcher = request.getRequestDispatcher(Constantes.JSP_BACK_CURSO_LISTADO);
+    convocatorias = cons.getAll();
+    request.setAttribute(Constantes.ATT_LISTADO_CONVOCATORIAS, convocatorias);
 
   }
 
@@ -86,6 +93,58 @@ public class ConvocatoriaServlet extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
+    // controlar update, delete, create
+    int operacion = -1;
+    IConvocatoriaService cons = null;
+    Convocatoria convocatoria = null;
+    try {
+      operacion = Integer.parseInt(request.getParameter(Constantes.OP_KEY));
+    } catch (Exception e) {
+      operacion = -1;
+    }
+
+    switch (operacion) {
+      case Constantes.OP_CREATE:
+        cons = new ConvocatoriaService();
+        convocatoria = obtenerParametrosConvocatoria(request);
+        try {
+          cons.create(convocatoria);
+        } catch (ConvocatoriaException e) {
+          e.printStackTrace();
+        }
+        break;
+      case Constantes.OP_DELETE:
+        cons = new ConvocatoriaService();
+
+        cons.delete(codigoConvocatoria);
+
+        break;
+      case Constantes.OP_UPDATE:
+        cons = new ConvocatoriaService();
+        convocatoria = obtenerParametrosConvocatoria(request);
+
+        cons.update(convocatoria);
+
+        break;
+      default:
+
+        break;
+    }
+    dispatcher = request.getRequestDispatcher(Constantes.JSP_BACK_CURSO_LISTADO);
+    dispatcher.forward(request, response);
+  }
+
+  private Convocatoria obtenerParametrosConvocatoria(HttpServletRequest request) {
+    Convocatoria convocatoria = null;
+
+    try {
+      convocatoria = new Convocatoria();
+      convocatoria.setCodigo(codigoConvocatoria);
+      convocatoria.setNombre(request.getParameter(Constantes.PAR_NOMBRE_CONVOCATORIA));
+    } catch (ConvocatoriaException e) {
+      e.printStackTrace();
+    }
+    return convocatoria;
   }
 
 }
