@@ -41,9 +41,10 @@ public interface IConvocatoriaService {
   /**
    * Actualiza los datos de la <code>Convocatoria</code>
    *
-   * @param codigoConvocatoria
-   *          <code>int</code> codigo de la <code>Convocatoria</code>.
-   * @return <code>Convocatoria</code>.
+   * @param convocatoria
+   *          <code>Convocatoria</code> a actualizar.
+   * @return <code>int</code> el codigo de la <code>Convocatoria</code> si ha ido bien y negativo si
+   *         ha ido mal.
    */
   public int update(Convocatoria convocatoria);
 

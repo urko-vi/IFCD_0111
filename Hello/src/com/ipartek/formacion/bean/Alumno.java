@@ -110,9 +110,11 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   /**
    * Metodo de poner la fecha de nacimiento del alumno.
    *
-   * <code>Date</code>@param fnacimiento
+   * @param fnacimiento
+   *          <code>Date</code> del <code>Alumno</code>.
    *
-   * @throws <code>AlumnoException</code>
+   * @throws AlumnoException
+   *           en el caso de que la fecha sea mayor que la fecha de hoy.
    */
   public void setfnacimiento(final Date fnacimiento) throws AlumnoException {
 

@@ -36,11 +36,11 @@ public class Curso {
    */
   private Map<Integer, Alumno> listadoAlumnos;
   /**
-   * {@code}TipoCurso es tipo de curso.
+   * {@code TipoCurso} es tipo de curso.
    */
   private TipoCurso tipoCurso;
   /**
-   * {@code}double es precio del curso.
+   * {@code double} es precio del curso.
    */
   private double precio;
 
@@ -62,8 +62,10 @@ public class Curso {
   }
 
   /**
-   *
-   * <code>double</code>@param precio.
+   * Metodo para fijar el precio.
+   * 
+   * @param precio
+   *          <code>double</code> es lo que cuesta.
    *
    * @throws CursoException
    *           en el caso de que el precio sea negativo.

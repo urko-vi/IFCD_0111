@@ -61,6 +61,7 @@ public class AlumnoServlet extends HttpServlet {
     // comprobar si es getAll o getById
     if (codigoAlumno == Alumno.CODIGOALUMNO) {
       getAll(request);
+      request.getAttribute("");
     } else {
       getById(request);
     }

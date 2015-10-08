@@ -3,7 +3,7 @@ package com.ipartek.formacion.util;
 /**
  * Clase que sirve para almacenar las constantes del proyecto.
  *
- * @author Administrador Aqui se guardan las constantes a nivel de proyecto
+ * @author Administrador.
  */
 public final class Constantes {
 
