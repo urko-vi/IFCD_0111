@@ -1,19 +1,19 @@
 package com.ipartek.formacion.listeners;
 
+import org.apache.log4j.Logger;
+
 import javax.servlet.http.HttpSessionAttributeListener;
 import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-import org.apache.log4j.Logger;
-
 /**
- * Application Lifecycle Listener implementation class SessionListener
+ * Application Lifecycle Listener implementation class SessionListener.
  *
  */
 public class SessionListener implements HttpSessionListener, HttpSessionAttributeListener {
 
-  private final static Logger LOG = Logger.getLogger("ACCESOS");
+  private static final Logger LOG = Logger.getLogger("ACCESOS");
 
   /**
    * Default constructor.
@@ -23,7 +23,7 @@ public class SessionListener implements HttpSessionListener, HttpSessionAttribut
   }
 
   /**
-   * @see HttpSessionListener#sessionCreated(HttpSessionEvent)
+   * @see HttpSessionListener#sessionCreated(HttpSessionEvent).
    */
   @Override
   public void sessionCreated(HttpSessionEvent arg0) {
@@ -31,7 +31,7 @@ public class SessionListener implements HttpSessionListener, HttpSessionAttribut
   }
 
   /**
-   * @see HttpSessionListener#sessionDestroyed(HttpSessionEvent)
+   * @see HttpSessionListener#sessionDestroyed(HttpSessionEvent).
    */
   @Override
   public void sessionDestroyed(HttpSessionEvent arg0) {
@@ -39,7 +39,7 @@ public class SessionListener implements HttpSessionListener, HttpSessionAttribut
   }
 
   /**
-   * @see HttpSessionAttributeListener#attributeAdded(HttpSessionBindingEvent)
+   * @see HttpSessionAttributeListener#attributeAdded(HttpSessionBindingEvent).
    */
   @Override
   public void attributeAdded(HttpSessionBindingEvent arg0) {
@@ -47,7 +47,7 @@ public class SessionListener implements HttpSessionListener, HttpSessionAttribut
   }
 
   /**
-   * @see HttpSessionAttributeListener#attributeRemoved(HttpSessionBindingEvent)
+   * @see HttpSessionAttributeListener#attributeRemoved(HttpSessionBindingEvent).
    */
   @Override
   public void attributeRemoved(HttpSessionBindingEvent arg0) {
@@ -55,7 +55,7 @@ public class SessionListener implements HttpSessionListener, HttpSessionAttribut
   }
 
   /**
-   * @see HttpSessionAttributeListener#attributeReplaced(HttpSessionBindingEvent)
+   * @see HttpSessionAttributeListener#attributeReplaced(HttpSessionBindingEvent).
    */
   @Override
   public void attributeReplaced(HttpSessionBindingEvent arg0) {
