@@ -204,10 +204,14 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
     Alumno alumno;
 
     /**
-     *
+     * Constructor con parametros.
+     * 
      * @param alumno
+     *          <code>Alumno</code> que se matricula.
      * @param fechaMatriculacion
+     *          <code>Date</code> fecha en la que se produce la matriculación.
      * @throws CursoException
+     *           en el caso de que el se pasen datos de <code>Curso</code> erroneos.
      */
     public CursoMatriculado(final Alumno alumno, final Date fechaMatriculacion)
         throws CursoException {

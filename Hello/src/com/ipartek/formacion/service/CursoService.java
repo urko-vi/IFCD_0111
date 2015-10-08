@@ -81,9 +81,11 @@ public class CursoService implements ICursoService {
   }
 
   /**
-   *
+   * Obtener el <code>Map</code> de alumnos matriculados en un <code>Curso</code>.
+   * 
    * @param codigoCurso
-   * @return
+   *          <code>int</code> el campo clave del <code>Curso</code> del que desamos informacion.
+   * @return <code>Map</code> con los datos de los alumnos.
    */
   public Map<Integer, Alumno> readAlumnos(final int codigoCurso) {
     Curso curso = null;
@@ -139,7 +141,7 @@ public class CursoService implements ICursoService {
   }
 
   /**
-   *
+   * Incrementa el precio de los cursos en función de su tipo.
    */
   public void incrementarPrecio() {
     for (int i = 0; i < cursos.size(); i++) {

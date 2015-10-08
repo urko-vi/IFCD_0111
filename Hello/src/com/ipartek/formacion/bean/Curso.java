@@ -89,9 +89,11 @@ public class Curso {
   }
 
   /**
-   *
+   * 
    * @param codigo
+   *          <code>int</code> el codigo del <code>Curso</code>.
    * @throws CursoException
+   *           en el caso de que el valor sea negativo.
    */
   public void setCodigo(int codigo) throws CursoException {
     if (codigo > Curso.CODIGO_CURSO) {
