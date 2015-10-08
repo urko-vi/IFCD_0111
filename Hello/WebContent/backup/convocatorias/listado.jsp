@@ -40,7 +40,7 @@
 		                	<a href="<%=Constantes.SERVLET_CONVOCATORIAS+"?"+Constantes.PAR_CODIGO+"="+convocatoria.getCodigo()%>">
 		                		<button type="button" class="btn btn-primary">Editar</button>
 		                	</a>
-		                	<form action="<%=Constantes.SERVLET_CURSOS%>" method="post">
+		                	<form action="<%=Constantes.SERVLET_CONVOCATORIAS%>" method="post">
 		                		<input type="hidden" name="<%=Constantes.PAR_CODIGO %>" value="<%=convocatoria.getCodigo()%>">
 		                		<input type="hidden" name="<%=Constantes.OP_KEY%>" value="<%=Constantes.OP_DELETE%>">
 		                		<input type="submit" class="btn btn-outline btn-danger btn-xs" value="Eliminar">
