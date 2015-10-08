@@ -61,7 +61,6 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
    * <p>
    * <code>int</code> @param nhermanos son el numero de hermanos del alumno.
    * </p>
-   * 
    * <code>String</code>@param dni <code>@throws</code> una <code>Exception</code> de tipo
    * <code>AlumnoException</code>
    */
@@ -193,8 +192,8 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
   }
 
   /**
-   * Clase <code>CursoMatriculado</code> hereda de
-   * <code>Curso</curso>. Sirve para especificar los datos de la matricula del curso.
+   * Clase <code>CursoMatriculado</code> hereda de <code>Curso</code>. Sirve para especificar los
+   * datos de la matricula del curso.
    *
    * @author va00
    *
