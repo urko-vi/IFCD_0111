@@ -101,7 +101,7 @@ public final class Constantes {
   /**
    * Dirección del Servlet de <code>Curso</code>.
    */
-  public static final String SERVLET_CURSOS = "cursos.do";
+  public static final String SERVLET_CURSOS = "curso.do";
   /**
    * Dirección del Servlet de <code>Convocatoria</code>.
    */
