@@ -58,11 +58,10 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
    * <p>
    * <code>Date</code>@param fnacimiento es la fecha de nacimiento del alumnos.
    * </p>
-   * </p>
    * <p>
    * <code>int</code> @param nhermanos son el numero de hermanos del alumno.
    * </p>
-   *
+   * 
    * <code>String</code>@param dni <code>@throws</code> una <code>Exception</code> de tipo
    * <code>AlumnoException</code>
    */

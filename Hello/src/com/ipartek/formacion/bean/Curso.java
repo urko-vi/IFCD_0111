@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Es la clase que agrupa los datos de un <code>Curso</curso>.
+ * Es la clase que agrupa los datos de un <code>Curso</code>.
  *
  * @author Administrador
  *
