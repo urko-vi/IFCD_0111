@@ -19,7 +19,7 @@ public interface IConvocatoriaService {
   public List<Convocatoria> getAll();
 
   /**
-   * Metodo para dar de alta <code>Convocatoria</code>.
+   * Metodo para dar de alta una <code>Convocatoria</code>.
    *
    * @param convocatoria
    *          <code>Convocatoria</code>.
@@ -30,7 +30,7 @@ public interface IConvocatoriaService {
   public int create(Convocatoria convocatoria) throws ConvocatoriaException;
 
   /**
-   * Obtiene la convocatoria
+   * Obtiene la convocatoria con el campo clave.
    *
    * @param codigoConvocatoria
    *          <code>int</code> codigo de la <code>Convocatoria</code>.
