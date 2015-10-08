@@ -127,7 +127,6 @@ public class CursoServlet extends HttpServlet {
         try {
           cs.delete(codigoCurso);
         } catch (CursoServiceException e1) {
-          // TODO Auto-generated catch block
           e1.printStackTrace();
         }
         break;
