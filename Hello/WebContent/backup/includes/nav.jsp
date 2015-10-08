@@ -34,7 +34,7 @@
                             <a class="active" href="<%= Constantes.SERVLET_CURSOS %>" title="Gestionar Cursos"><i class="fa fa-user fa-fw"></i>Cursos</a>
                         </li>    
                         <li>
-							<a class="active" href="<%=Constantes.SERVLET_LOGIN %>"title="Gestionar Convocatorias"><i class="fa fa-user fa-fw"></i>Convocatorias </a>
+							<a class="active" href="<%=Constantes.SERVLET_CONVOCATORIAS %>"title="Gestionar Convocatorias"><i class="fa fa-user fa-fw"></i>Convocatorias </a>
                         </li>                   
                     </ul>
                 </div>
