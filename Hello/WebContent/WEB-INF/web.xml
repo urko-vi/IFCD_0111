@@ -59,4 +59,7 @@
     <servlet-name>ConvocatoriaServlet</servlet-name>
     <url-pattern>/convocatorias.do</url-pattern>
   </servlet-mapping>
+  <listener>
+    <listener-class>com.ipartek.formacion.listeners.SessionListener</listener-class>
+  </listener>
 </web-app>
