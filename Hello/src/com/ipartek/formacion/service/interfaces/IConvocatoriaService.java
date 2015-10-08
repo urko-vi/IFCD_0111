@@ -32,7 +32,7 @@ public interface IConvocatoriaService {
   /**
    * Obtiene la convocatoria
    *
-   * @param codigoConcovocatoria
+   * @param codigoConvocatoria
    *          <code>int</code> codigo de la <code>Convocatoria</code>.
    * @return <code>Convocatoria</code>.
    */
