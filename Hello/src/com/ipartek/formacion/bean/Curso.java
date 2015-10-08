@@ -24,7 +24,7 @@ public class Curso {
   public static final double PRECIO_CURSO = 0.0;
 
   /**
-   * {@code}int codigo el código del curso
+   * {@code int} codigo el código del curso.
    */
   private int codigo;
   /**

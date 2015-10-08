@@ -36,11 +36,17 @@ public class ConvocatoriaException extends Exception {
   }
 
   /**
+   * Constructor que provee mensage de error, la causa si debe de ser lanzada,y si se puede sacar la
+   * traza.
    * 
    * @param message
+   *          <code>String</code> es el mensaje.
    * @param cause
+   *          <code>Throwable</code> es la causa.
    * @param enableSuppression
+   *          <code>boolean</code> si se puede suprimir.
    * @param writableStackTrace
+   *          <code>boolean</code> si se puede sacar la traza.
    */
   public ConvocatoriaException(String message, Throwable cause, boolean enableSuppression,
       boolean writableStackTrace) {
@@ -48,25 +54,32 @@ public class ConvocatoriaException extends Exception {
   }
 
   /**
+   * Constructor al que se le pasa la causa y el mensaje de la <code>ConvocatoriaException</code>.
    * 
    * @param message
+   *          <code>String</code> es el mensaje.
    * @param cause
+   *          <code>Throwable</code> es la causa.
    */
   public ConvocatoriaException(String message, Throwable cause) {
     super(message, cause);
   }
 
   /**
+   * Constructor al que se le pasa el mensaje de la <code>ConvocatoriaException</code>.
    * 
    * @param message
+   *          <code>String</code> es el mensaje.
    */
   public ConvocatoriaException(String message) {
     super(message);
   }
 
   /**
+   * Constructor al que se le pasa la causa de la <code>ConvocatoriaException</code>.
    * 
    * @param cause
+   *          <code>Throwable</code> es la causa.
    */
   public ConvocatoriaException(Throwable cause) {
     super(cause);

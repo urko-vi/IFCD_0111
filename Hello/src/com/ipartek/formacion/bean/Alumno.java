@@ -180,6 +180,7 @@ public class Alumno extends Usuario implements IMatriculable, Comparable<Alumno>
    * Este metodo borra a un <code>Alumno</code> del <code>Map</code> de alumnos.
    *
    * @throws CursoServiceException
+   *           en el caso de que el codigo de <code>Curso</code> no exista.
    */
   @Override
   public void desmatricularCurso(final int codigoCurso) throws CursoServiceException {

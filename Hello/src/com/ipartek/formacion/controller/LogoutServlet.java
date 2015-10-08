@@ -43,7 +43,7 @@ public class LogoutServlet extends HttpServlet {
   }
 
   /**
-   * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+   * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response).
    */
   @Override
   protected void doPost(final HttpServletRequest request, final HttpServletResponse response)

@@ -22,8 +22,10 @@ public class CursoService implements ICursoService {
   }
 
   /**
-   *
+   * Metodo que añade un <code>Alumno</code>.
+   * 
    * @param alumno
+   *          <code>Alumno</code> es <code>Alumno</code>a añadir.
    */
   public void addAlumno(final Alumno alumno) {
     Curso curso = cursos.get(0);

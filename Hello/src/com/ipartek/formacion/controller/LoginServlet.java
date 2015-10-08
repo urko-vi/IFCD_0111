@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class LoginServlet.
  */
 
 public class LoginServlet extends HttpServlet {
@@ -27,14 +26,14 @@ public class LoginServlet extends HttpServlet {
 
   // private ServletConfig config;
   /**
-   * @see HttpServlet#HttpServlet()
+   * @see HttpServlet#HttpServlet().
    */
   public LoginServlet() {
     super();
   }
 
   /**
-   * @see Servlet#init(ServletConfig)
+   * @see Servlet#init(ServletConfig).
    */
   @Override
   public void init(final ServletConfig config) throws ServletException {
@@ -43,7 +42,7 @@ public class LoginServlet extends HttpServlet {
   }
 
   /**
-   * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+   * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response).
    */
   @Override
   protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
@@ -52,7 +51,7 @@ public class LoginServlet extends HttpServlet {
   }
 
   /**
-   * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+   * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response).
    */
   @Override
   protected void doPost(final HttpServletRequest request, final HttpServletResponse response)

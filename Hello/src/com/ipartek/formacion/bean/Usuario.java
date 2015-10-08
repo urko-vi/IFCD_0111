@@ -1,6 +1,7 @@
 package com.ipartek.formacion.bean;
 
 /**
+ * Clase de Usuario de al aplicacion.
  * 
  * @author java
  *
@@ -14,7 +15,7 @@ public class Usuario {
   protected String telefono;
 
   /**
-   * 
+   * Constructor en blanco de la clase <code>Usuario</code>.
    */
   public Usuario() {
     super();
