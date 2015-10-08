@@ -55,10 +55,10 @@ public class ConvocatoriaServlet extends HttpServlet {
     // controlar cuando es getById(codigoCurso) o
     // getAll()
     if (codigoConvocatoria == Convocatoria.CODIGO_CONVOCATORIA) {
-      // operacion de listar todos los cursos
+      // operacion de listar todos las convocatorias
       listarTodasConvocatorias(request);
     } else {
-      // obtener los datos de un curso
+      // obtener los datos de una convocatoria
       obtenerDatosConvocatoria(request);
     }
     // redireccionamos

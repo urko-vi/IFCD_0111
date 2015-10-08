@@ -19,7 +19,7 @@
 	<form action="<%=request.getContextPath()+"/"+Constantes.SERVLET_CURSOS%>" method="post" role="form">
 	
 		<div class="form-group">			
-			<input type="hidden" name="id" readonly value="<%=convocatoria.getCodigo()%>" class="form-control">
+			<input type="hidden" name="<%=Constantes.PAR_CODIGO %>" readonly value="<%=convocatoria.getCodigo()%>" class="form-control">
 		</div>	
 		
 		<div class="form-group">

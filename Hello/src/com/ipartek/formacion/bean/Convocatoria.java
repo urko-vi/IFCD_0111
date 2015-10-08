@@ -19,7 +19,7 @@ public class Convocatoria {
   private int codigoCurso;
 
   /**
-   * Constructor en blanco de la classe <code>Convocatoria</code>.
+   * Constructor en blanco de la clase <code>Convocatoria</code>.
    * 
    * @throws ConvocatoriaException
    *           en el caso de que el codigo sea negativo.
@@ -44,7 +44,7 @@ public class Convocatoria {
    *           en el caso de que el código sea negativo.
    */
   public void setCodigo(int codigo) throws ConvocatoriaException {
-    if (this.codigo > Convocatoria.CODIGO_CONVOCATORIA) {
+    if (this.codigo >= Convocatoria.CODIGO_CONVOCATORIA) {
       this.codigo = codigo;
     } else {
       throw new ConvocatoriaException(ConvocatoriaException.MSG_ERROR_CODIGO_CONVOCATORIA,
