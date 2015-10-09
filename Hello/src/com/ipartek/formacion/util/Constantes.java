@@ -85,7 +85,7 @@ public final class Constantes {
   /**
    * Dirección de la página de login.
    */
-  public static final String PAGINA_LOGIN = "login.jsp";
+  public static final String JSP_PAGINA_LOGIN = "login.jsp";
   /**
    * Dirección del Servlet que hace login.
    */
@@ -110,6 +110,7 @@ public final class Constantes {
    * Dirección de la carpeta del backoffice.
    */
   public static final String RUTA_BACKUP = "backup/";
+
   /**
    * Dirección de la página principal del back.
    */

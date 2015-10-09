@@ -36,9 +36,7 @@ public class SessionListener implements HttpSessionListener, HttpSessionAttribut
     // hay que pasarselo en segundos
     // si se pone un 0 no caduca la session
     sesion.setMaxInactiveInterval(60 * 30);
-    Usuario user = (Usuario) sesion.getAttribute(Constantes.ATT_USUARIO);
-    SessionListener.LOG.trace("La sesion: " + sesion.getId() + "del usuario:" + user.getUserName()
-        + " " + sesion.getMaxInactiveInterval() + " segundos");
+    SessionListener.LOG.trace("La sesion: " + sesion.getId() + " " + " segundos");
   }
 
   /**
@@ -54,7 +52,9 @@ public class SessionListener implements HttpSessionListener, HttpSessionAttribut
    */
   @Override
   public void attributeAdded(HttpSessionBindingEvent arg0) {
-    // TODO Auto-generated method stub
+    HttpSession sesion = arg0.getSession();
+    Usuario user = (Usuario) sesion.getAttribute(Constantes.ATT_USUARIO);
+    SessionListener.LOG.trace("Usuario " + user.getUserName() + " segundos");
   }
 
   /**

@@ -83,7 +83,7 @@ public class LoginServlet extends HttpServlet {
     } else {
       // redirigir
       RequestDispatcher dispatcher = null;
-      dispatcher = request.getRequestDispatcher(Constantes.PAGINA_LOGIN);
+      dispatcher = request.getRequestDispatcher(Constantes.JSP_PAGINA_LOGIN);
       request.setAttribute(Constantes.ATT_MENSAJE, "usuario o contraseña incorrectos");
       // redirecionamos
       dispatcher.forward(request, response);

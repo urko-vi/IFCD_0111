@@ -38,7 +38,7 @@ public class LogoutServlet extends HttpServlet {
     sesion.setAttribute(Constantes.ATT_USUARIO, null);
     sesion.setAttribute(Constantes.ATT_MENSAJE, "Se ha salido con exito");
     // se redirecciona
-    response.sendRedirect(Constantes.PAGINA_LOGIN);
+    response.sendRedirect(Constantes.JSP_PAGINA_LOGIN);
 
   }
 

@@ -65,4 +65,13 @@
   <listener>
     <listener-class>com.ipartek.formacion.listeners.InitListener</listener-class>
   </listener>
+  <filter>
+    <display-name>Backoffice</display-name>
+    <filter-name>Backoffice</filter-name>
+    <filter-class>com.ipartek.formacion.bean.filters.Backoffice</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>Backoffice</filter-name>
+    <url-pattern>/backup</url-pattern>
+  </filter-mapping>
 </web-app>
