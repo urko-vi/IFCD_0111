@@ -6,6 +6,8 @@ import com.ipartek.formacion.service.ConvocatoriaService;
 import com.ipartek.formacion.service.interfaces.IConvocatoriaService;
 import com.ipartek.formacion.util.Constantes;
 
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -22,6 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ConvocatoriaServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
   private RequestDispatcher dispatcher = null;
+  private static final Logger log = Logger.getLogger(ConvocatoriaServlet.class);
 
   private int codigoConvocatoria = Convocatoria.CODIGO_CONVOCATORIA;
 
@@ -101,6 +104,7 @@ public class ConvocatoriaServlet extends HttpServlet {
       operacion = Integer.parseInt(request.getParameter(Constantes.OP_KEY));
     } catch (Exception e) {
       operacion = -1;
+
     }
 
     switch (operacion) {
