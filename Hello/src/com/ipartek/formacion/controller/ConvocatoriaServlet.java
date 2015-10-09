@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ConvocatoriaServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
   private RequestDispatcher dispatcher = null;
-  private static final Logger log = Logger.getLogger(ConvocatoriaServlet.class);
+  private static final Logger LOG = Logger.getLogger(ConvocatoriaServlet.class);
 
   private int codigoConvocatoria = Convocatoria.CODIGO_CONVOCATORIA;
 
@@ -104,6 +104,7 @@ public class ConvocatoriaServlet extends HttpServlet {
       operacion = Integer.parseInt(request.getParameter(Constantes.OP_KEY));
     } catch (Exception e) {
       operacion = -1;
+      ConvocatoriaServlet.LOG.debug(e.getMessage());
 
     }
 
