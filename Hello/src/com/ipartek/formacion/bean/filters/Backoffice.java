@@ -54,7 +54,7 @@ public class Backoffice implements Filter {
           String ipAddress = req.getHeader("X-FORWARDED-FOR");
 
           Backoffice.log.error("La IP se intando colar. " + ipAddress);
-          res.sendRedirect(Constantes.JSP_PAGINA_LOGIN);
+          // res.sendRedirect(Constantes.JSP_PAGINA_LOGIN);
         } else {
           chain.doFilter(request, response);
         }
@@ -67,7 +67,6 @@ public class Backoffice implements Filter {
    */
   @Override
   public void init(FilterConfig fConfig) throws ServletException {
-    // TODO Auto-generated method stub
   }
 
 }
