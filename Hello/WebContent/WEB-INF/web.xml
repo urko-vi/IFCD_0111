@@ -68,14 +68,23 @@
   <filter>
     <display-name>Backoffice</display-name>
     <filter-name>Backoffice</filter-name>
-    <filter-class>com.ipartek.formacion.bean.filters.Backoffice</filter-class>
+    <filter-class>com.ipartek.formacion.bean.filters.BackofficeFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>Backoffice</filter-name>
     <url-pattern>/backup</url-pattern>
   </filter-mapping>
   <error-page>
-  	<error-code>404</error-code>
-  	<location>/404.jsp</location>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
   </error-page>
+  <filter>
+    <display-name>JspFilter</display-name>
+    <filter-name>JspFilter</filter-name>
+    <filter-class>com.ipartek.formacion.bean.filters.JspFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>JspFilter</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
 </web-app>

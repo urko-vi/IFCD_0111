@@ -19,13 +19,13 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class Backoffice.
  */
-public class Backoffice implements Filter {
-  private static final Logger log = Logger.getLogger(Backoffice.class);
+public class BackofficeFilter implements Filter {
+  private static final Logger log = Logger.getLogger(BackofficeFilter.class);
 
   /**
    * Default constructor.
    */
-  public Backoffice() {
+  public BackofficeFilter() {
     // TODO Auto-generated constructor stub
   }
 
@@ -38,7 +38,7 @@ public class Backoffice implements Filter {
   }
 
   /**
-   * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
+   * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain).
    */
   @Override
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -53,7 +53,7 @@ public class Backoffice implements Filter {
         if (sesion == null || sesion.getAttribute(Constantes.ATT_USUARIO) == null) {
           String ipAddress = req.getHeader("X-FORWARDED-FOR");
 
-          Backoffice.log.error("La IP se intando colar. " + ipAddress);
+          BackofficeFilter.log.error("La IP se intando colar. " + ipAddress);
           // res.sendRedirect(Constantes.JSP_PAGINA_LOGIN);
         } else {
           chain.doFilter(request, response);
