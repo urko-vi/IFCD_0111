@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping >
+	<class name="com.ipartek.formacion.pojo.Curso" table="curso">
+		<id name="codigo" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="nombre" type="string" column="nombre"/>
+		<property name="tipoCurso" />
+		<!-- 1-N -->
+		<set name="cursos" cascade="all">
+			<key column="codigo"/>
+			<one-to-many column="codCurso" class="com.ipartek.formacion.pojo.Curso" />
+		</set>
+		<!-- 1-1 -->
+		<one-to-one name="tipoCurso" class="com.ipartek.formacion.pojo.TipoCurso"/>
+	</class>
+</hibernate-mapping>

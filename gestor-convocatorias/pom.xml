@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.ipartek.formacion</groupId>
+  <artifactId>gestor-convocatorias</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>gestor-convocatorias</name>
+  <description>Este proyecto va a permitirnos gestionar convocatorias</description>
+  <properties>
+		<java.version>1.6</java.version>
+		<junit.version>4.12</junit.version>
+		<jservlet.version>2.5</jservlet.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.plugin.api>2.2.0</maven.plugin.api>
+		<maven.compiler.plugin>2.1</maven.compiler.plugin>
+		<mysql.conector>5.1.36</mysql.conector>
+	</properties>  
+  <dependencies>
+  	<!-- HIBERNATE -->
+  	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>	
+		<version>5.0.2.Final</version>
+	</dependency>
+ 
+  	<!--JEE  -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+		<version>${jservlet.version}</version>
+		<scope>provided</scope>
+	</dependency>
+    <dependency>
+    	<!--JUNIT -->
+    	<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+      		<scope>test</scope>
+    	</dependency>
+    	<!-- MAVEN PLUGIN -->
+    	<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-plugin-api</artifactId>
+			<version>${maven.plugin.api}</version>
+		</dependency>
+		<!-- CONECTOR MYSQL -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.conector}</version>
+		</dependency>
+	</dependencies>
+	 <build>
+  		<plugins>
+  			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-compiler-plugin</artifactId>
+			  <version>${maven.compiler.plugin}</version>
+			  <configuration>
+			    <source>${java.version}</source>
+			    <target>${java.version}</target>
+				<webResources>
+
+		            <resource>
+		                <filtering>true</filtering>
+		                <directory>src/main/resources</directory>
+		                <includes>
+		                    <include>context.xml</include>
+		                </includes>
+		            </resource>
+                </webResources>
+                <warSourceDirectory>src/main/webapp</warSourceDirectory>
+        		<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+			  </configuration>
+			</plugin>
+		</plugins>
+    <finalName>gestor-convocatorias</finalName>
+    </build>
+</project>

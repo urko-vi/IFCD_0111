@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping>
+	<class name="com.ipartek.formacion.pojo.Lugar" table="lugar">
+		<id name="codigo" type="int">
+			<generator class="IDENTITY" />
+		</id>
+		<property name="nombre" type="string" column="nombre" />
+		<many-to-one name="curso" column="curso" class="Curso" />
+	</class>
+</hibernate-mapping>
