@@ -26,7 +26,7 @@ public class ConvocatoriaServiceTest {
 
   @BeforeClass
   public static void setUpBeforeClass() throws Exception {
-
+    // https://blogs.oracle.com/randystuph/entry/injecting_jndi_datasources_for_junit
     ConvocatoriaServiceTest.sc = new ConvocatoriaService();
     ConvocatoriaServiceTest.convocatorias = new ArrayList<Convocatoria>();
     Convocatoria conv = new Convocatoria();
@@ -82,7 +82,7 @@ public class ConvocatoriaServiceTest {
     // comprobar que los dos datos que se devuelven estan bien
     Assert.assertEquals(
         "Validar que el elemento convocatoria sea de nombre:" + expected.getNombre()
-            + actual.getNombre(), expected.getCodigo(), actual.getCodigo());
+        + actual.getNombre(), expected.getCodigo(), actual.getCodigo());
     // comprobar que los objetos son distintos
     actual = ConvocatoriaServiceTest.sc.getById(2);
     Assert.assertNotEquals("Non ", expected.getCodigo(), actual.getCodigo());
