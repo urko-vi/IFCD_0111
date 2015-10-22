@@ -2,13 +2,20 @@ package com.ipartek.formacion.bean;
 
 import com.ipartek.formacion.bean.excepciones.ConvocatoriaException;
 
+import java.io.Serializable;
+
 /**
  * Clase convocatorias.
  *
  * @author Administrador
  *
  */
-public class Convocatoria {
+public class Convocatoria implements Serializable {
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
+
   /**
    * Código invalido de una solicitud.
    */
@@ -26,7 +33,7 @@ public class Convocatoria {
    */
   public Convocatoria() throws ConvocatoriaException {
     super();
-    setCodigo(Convocatoria.CODIGO_CONVOCATORIA);
+    // setCodigo(Convocatoria.CODIGO_CONVOCATORIA);
     setNombre("");
     setCodigoCurso(Curso.CODIGO_CURSO);
   }
@@ -44,7 +51,7 @@ public class Convocatoria {
    *           en el caso de que el código sea negativo.
    */
   public void setCodigo(int codigo) throws ConvocatoriaException {
-    if (this.codigo >= Convocatoria.CODIGO_CONVOCATORIA) {
+    if (this.codigo > Convocatoria.CODIGO_CONVOCATORIA) {
       this.codigo = codigo;
     } else {
       throw new ConvocatoriaException(ConvocatoriaException.MSG_ERROR_CODIGO_CONVOCATORIA,
@@ -66,6 +73,22 @@ public class Convocatoria {
 
   public void setCodigoCurso(int codigoCurso) {
     this.codigoCurso = codigoCurso;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    Convocatoria conv = null;
+    boolean igual = false;
+    if (obj instanceof Convocatoria) {
+      conv = (Convocatoria) obj;
+      if (conv.getCodigo() == getCodigo()) {
+        igual = true;
+      }
+
+    } else {
+      throw new UnsupportedOperationException();
+    }
+    return igual;
   }
 
 }

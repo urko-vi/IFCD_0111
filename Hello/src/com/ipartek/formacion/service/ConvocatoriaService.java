@@ -22,7 +22,7 @@ public class ConvocatoriaService implements IConvocatoriaService {
   }
 
   private void init() {
-    ConvocatoriaService.index = 0;
+    ConvocatoriaService.index = 1;
     convocatorias = new ArrayList<Convocatoria>();
     Convocatoria con = null;
 
@@ -81,8 +81,9 @@ public class ConvocatoriaService implements IConvocatoriaService {
     int posicion = -1;
 
     posicion = obtenerPosicion(codigoConvocatoria);
-    // TODO controlar cuando devuelva una posicion negativa
-    convocatorias.get(posicion);
+    if (validarPosicion(posicion)) {
+      convocatoria = convocatorias.get(posicion);
+    }
     return convocatoria;
   }
 
@@ -97,9 +98,19 @@ public class ConvocatoriaService implements IConvocatoriaService {
   public int update(Convocatoria convocatoria) {
     int posicion = -1;
     posicion = obtenerPosicion(convocatoria.getCodigo());
-    // TODO controlar cuando devuelva una posicion negativa
-    convocatorias.add(posicion, convocatoria);
+    if (validarPosicion(posicion)) {
+      convocatorias.add(posicion, convocatoria);
+    }
+
     return convocatoria.getCodigo();
+  }
+
+  private boolean validarPosicion(int posicion) {
+    boolean valida = false;
+    if (posicion > -1 && posicion < convocatorias.size()) {
+      valida = true;
+    }
+    return valida;
   }
 
   /**
@@ -113,10 +124,14 @@ public class ConvocatoriaService implements IConvocatoriaService {
   @Override
   public boolean delete(int codigoConvocatoria) {
     int posicion = -1;
+    boolean borrado = false;
     posicion = obtenerPosicion(codigoConvocatoria);
-    // TODO controlar cuando devuelva una posicion negativa
-    convocatorias.remove(posicion);
-    return false;
+    if (validarPosicion(posicion)) {
+      convocatorias.remove(posicion);
+      borrado = true;
+    }
+
+    return borrado;
   }
 
   private int obtenerPosicion(int codigo) {
