@@ -2,12 +2,15 @@ package com.ipartek.formacion.controller;
 
 import com.ipartek.formacion.bean.Alumno;
 import com.ipartek.formacion.bean.Usuario;
+import com.ipartek.formacion.i18n.I18n;
 import com.ipartek.formacion.service.AlumnoService;
 import com.ipartek.formacion.service.interfaces.IAlumnoService;
 import com.ipartek.formacion.util.Constantes;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -47,7 +50,15 @@ public class LoginServlet extends HttpServlet {
   @Override
   protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
       throws ServletException, IOException {
+    Locale locale = request.getLocale();
+    HttpSession sesion = request.getSession(true);
+    ResourceBundle messages = ResourceBundle.getBundle("com.ipartek.formacion.i18n.i18nmessages",
+        locale);
+    // es_ES
+    String local = I18n.getBrowserLocale(locale);
 
+    sesion.setAttribute("idioma", local);
+    response.sendRedirect("login.jsp");
   }
 
   /**
