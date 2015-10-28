@@ -14,7 +14,6 @@ public class I18n {
     System.out.println(locale);
     if (localeBrowser != null) {
       // es euskera
-
       String localeEuskera = Idioma.EUSKERA.getLenguaje();
 
       if (localeBrowser.getLanguage().equalsIgnoreCase(localeEuskera)) {
