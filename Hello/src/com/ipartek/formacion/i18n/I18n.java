@@ -11,14 +11,17 @@ import java.util.Locale;
 public class I18n {
   public static String getBrowserLocale(Locale localeBrowser) {
     String locale = Idioma.CASTELLANO.getLocale();
+    System.out.println(locale);
     if (localeBrowser != null) {
       // es euskera
-      String localeEuskera = Idioma.EUSKERA.getLocale();
+
+      String localeEuskera = Idioma.EUSKERA.getLenguaje();
+
       if (localeBrowser.getLanguage().equalsIgnoreCase(localeEuskera)) {
         locale = Idioma.EUSKERA.getLocale();
       } else {
         // si es ingles
-        if (localeBrowser.getLanguage().equalsIgnoreCase(Idioma.INGLES.getLocale())) {
+        if (localeBrowser.getLanguage().equalsIgnoreCase(Idioma.INGLES.getLenguaje())) {
           locale = Idioma.INGLES.getLocale();
         }
       }
