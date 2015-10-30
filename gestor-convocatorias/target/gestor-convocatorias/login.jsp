@@ -7,6 +7,8 @@
 <title>Login</title>
 </head>
 <body>
-Página de Logisdasdasn
+Página de Login
+<a href="listadoConvocatorias.do">Mostrar convocatorias</a>
+
 </body>
 </html>

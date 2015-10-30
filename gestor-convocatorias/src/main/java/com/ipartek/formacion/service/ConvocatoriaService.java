@@ -44,4 +44,10 @@ public class ConvocatoriaService implements IConvocatoriaService {
     // Convocatoria conv = convocatorias.get(codigo);
     return conv;
   }
+
+  @Override
+  public List<Convocatoria> getAll() {
+
+    return convocatorias;
+  }
 }

@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>gestor-convocatorias</display-name>
   <welcome-file-list>
-    <welcome-file>controller.do</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
@@ -11,13 +11,18 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>Controller</display-name>
-    <servlet-name>Controller</servlet-name>
-    <servlet-class>com.ipartek.formacion.controller.Controller</servlet-class>
+    <display-name>FrontController</display-name>
+    <servlet-name>FrontController</servlet-name>
+    <servlet-class>com.ipartek.formacion.controller.FrontControllerServlet</servlet-class>
+    <init-param>
+		<param-name>mapping</param-name> <!--  -->
+		<param-value>/WEB-INF/mappings.properties</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Controller</servlet-name>
-    <url-pattern>/controller.do</url-pattern>
+    <servlet-name>FrontController</servlet-name>
+    <url-pattern>*.do</url-pattern>
   </servlet-mapping>
    <resource-ref>
         <description>MySQL Datasource example</description>

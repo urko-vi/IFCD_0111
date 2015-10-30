@@ -8,10 +8,10 @@
 	<property name="connection.pool_size">10</property>
 	<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
 	<property name="show_sql">true</property>
-	
+	<!-- 
 	<mapping resource="com/ipartek/formacion/pojo/Candidato.xml" />
 	<mapping resource="com/ipartek/formacion/pojo/Curso.xml" />
 	<mapping class="com.ipartek.formacion.pojo.TipoCurso"/>
-	
+	 -->
 </session-factory>
 </hibernate-configuration>

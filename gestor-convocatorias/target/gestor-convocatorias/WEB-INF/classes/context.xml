@@ -5,7 +5,7 @@
 	name="jdbc/gestor-convocatorias"
 	driverClassName="com.mysql.jdbc.Driver"
 	type="javax.sql.DataSource"
-	url="jdbc:mysql://locahost:3036;databaseName=formacion"
+	url="jdbc:mysql://locahost:3036/formacion"
 	username="alumno"
 	password="alumno"
 	maxActive="100"

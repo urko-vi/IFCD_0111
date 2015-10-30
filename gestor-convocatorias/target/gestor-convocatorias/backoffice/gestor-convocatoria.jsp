@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="com.ipartek.formacion.pojo.Curso"%>
 <%@page import="com.ipartek.formacion.pojo.Convocatoria"%>
 <%@page import="java.util.List"%>
@@ -11,19 +12,31 @@
 </head>
 <body>
 <%
-List<Convocatoria> listaConv = (List<Convocatoria> )request.getAttribute("listaConvocatorias");
-
-for(Convocatoria conv: listaConv){
-  out.println(conv.getCodigo()+" - "+ conv.getNombre() +" - "+ conv.getDescripcion()+"\n");
-}
-List<Curso> listaCur = (List<Curso>)request.getAttribute("listaCursos");
-
-for(Curso cur: listaCur){
-  out.println(cur.getCodigo()+" - "+ cur.getNombre() +" - "+ cur.getDescripcion()+"\n");
+List<Convocatoria> listaConv = (List<Convocatoria> )request.getAttribute("datos");
+if(listaConv!=null){
+	for(Convocatoria conv: listaConv){
+	  out.println(conv.getCodigo()+" - "+ conv.getNombre() +" - "+ conv.getDescripcion()+"\n");
+	}
 }
 %>
-<a href="controller.do?candidato=crear">Crear Candidato</a>
-
+<table>
+	<thead>
+	 	<tr>
+      		<th>codigo</th>
+      		<th>nombre</th>
+      		<th>descripcion</th>
+       	</tr>
+	</thead>
+	<tbody>
+	<c:forEach items="${datos}" var="conv">
+		<tr>
+	    	<td>${conv.codigo}</td>
+	    	<td>${conv.nombre}</td>
+	    	<td>${conv.descripcion}</td>
+	    </tr>
+	</c:forEach>
+	</tbody>
+</table>
 
 
 
